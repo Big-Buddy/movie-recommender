@@ -1,0 +1,13 @@
+Details on essay generation
+	->Once the documents and topic file have been normalized we perform the query function using both as parameters
+	->From this we retrieve a container of query_results where sentences from the documents are ranked based on their similarity to the topic file
+	->We then sort the container according to the following hierarchy
+		->By document (???) - assuming this means we group sentences by the documents they appear in
+		->By position in the document
+			->Given - 
+				->sentences s1 and s2 are in document d
+				->s1 appears before s2 in d
+				->s2 is ranked higher than s1 by query()
+			->we put s1 in the essay before s2 simply based on the fact that s1 appeared in the document regardless of score
+	->We then combine this container of sentences into an "essay" of n length (where n is # of words) with n = 500 by default
+		

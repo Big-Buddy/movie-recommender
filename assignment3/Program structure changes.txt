@@ -1,0 +1,22 @@
+Program structure changes-
+	Move query function to indexer, adjust definition if necessary
+
+	Declare and implement class index_item
+		->Abstract, thus has a pure virtual function and can't be instantiated
+		->Subclasses: document & sentence (public inheritance)
+			->sentence will need be implemented similarly to document with an extra attribute (pos)
+
+	Declare and implement class abstract_tokenizer
+		->Abstract, thus has a pure virtual function and can't be instantiated
+		->Subclasses: word_tokenizer & sentence_tokenizer
+			->word_tokenizer works just as the old tokenizer does
+			->sentence_tokenizer splits the "topic questions" into sentences (a sentence is defined as a full-stop period and not abbreviations aka Dr. Mr. Mrs. etc.)
+
+	Changes to class indexer
+		->Make indexer abstract
+		->Subclasses document_indexer & sentence_indexer
+		->document_indexer works as the old indexer does
+		->sentence_indexer overrides operator[] and query()
+
+	Changes to class query_result
+		->A query result is now has vector<pair<*index_item, double>> as its score
