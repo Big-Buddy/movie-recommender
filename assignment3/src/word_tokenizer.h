@@ -2,7 +2,7 @@
 #define WORD_TOKENIZER_H_
 #include <string>
 #include <vector>
-#include <abstract_tokenizer.h>
+#include "abstract_tokenizer.h"
 
 using namespace std;
 

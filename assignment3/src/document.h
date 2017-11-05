@@ -2,7 +2,7 @@
 #define DOCUMENT_H_
 
 #include <string>
-#include <index_item.h>
+#include "index_item.h"
 
 class document : public index_item
 {
