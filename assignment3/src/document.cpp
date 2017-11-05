@@ -8,15 +8,14 @@
  * It then sets the document's size to the size of content
  */
 document::document(string name)
-	:filename(name)
-{
-		ifstream fin(filename);
-		string new_content;
-		while(fin >> content){
-			content += new_content + " ";
-		}
-		content = content.substr(0,content.size()-1);
-		item_size = content.size();
+	:filename(name) {
+	ifstream fin(filename);
+	string new_content;
+	while (fin >> new_content) {
+		content += new_content + " ";
+	}
+	content = content.substr(0, content.size() - 1);
+	item_size = content.size();
 
 }
 
