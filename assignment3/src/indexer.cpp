@@ -141,19 +141,6 @@ const document & operator >>(document & d, indexer & idx){
 	for(int i=0;i<tokens.size();i++){
 		string s = tokens[i];
 
-//        //first, add the token to every document's frequency. this will make things easier later on.
-//        for(vector<string>::const_iterator docNamesIt = docNames.begin(); docNamesIt != docNames.end(); ++docNamesIt){
-//
-//            if(idx.tftd1[s].find(*docNamesIt) == idx.tftd1[s].end()){
-//                idx.tftd1[s][*docNamesIt] = 0;
-//            }
-//            if(!idx.stpw->operator ()(s)){
-//                if(idx.tftd2[s].find(*docNamesIt) == idx.tftd2[s].end()){
-//                    idx.tftd2[s][*docNamesIt] = 0;
-//                }
-//            }
-//        }
-
         //if the token is not a stopword, count it in tftd2
 		if(!idx.stpw->operator ()(s)) {
             idx.tftd2[s][docName]++;

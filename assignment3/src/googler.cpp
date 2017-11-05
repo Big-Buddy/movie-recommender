@@ -30,14 +30,16 @@ int main(){
 		cout << "\nEnter the query you want to search for or -1 to exit:" << endl;
 		cin.ignore();
 		getline(cin, query);
-		if(query == "-1")break;
+		if(query == "-1")
+            break;
 		cout << "Enter the number of documents for the top queries or -1 to skip:" << endl;
 		int n;
 		cin >> n;
+		vector<pair<document, double> > score;
 		if(n == -1)
-			q.query(idx,query);
+			score = q.query(idx,query);
 		else
-			q.query(idx,query,n);
+			score = q.query(idx,query,n);
 	}
 	return 0;
 }

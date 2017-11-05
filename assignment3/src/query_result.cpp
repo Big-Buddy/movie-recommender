@@ -27,8 +27,8 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
 
     if(!idx.isNormalize())
         throw idx.INDEX_NOT_NORMALIZED;
-    word_tokenizer* t = new word_tokenizer;
-    vector<string> tokens = t->word_tokenize(s);
+    word_tokenizer t;
+    vector<string> tokens = t.word_tokenize(s);
     map<string,int> queryfrequency;
 
     //get the term frequency of every word in the query
@@ -57,17 +57,17 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
 
     //then, get the weight of the query's terms in the query
     for(map<string,int >::const_iterator it = queryfrequency.begin();it != queryfrequency.end();it++){
-        string t = it->first;
+        string term = it->first;
         double s = size;
-        double d = dftq[t];
-        double tf = queryfrequency[t];
+        double d = dftq[term];
+        double tf = queryfrequency[term];
         double temp1 = 1+((double)log(tf)/(double)log(10));
         double temp2 = (double)log(s/d)/(double)log(10);
         double Wtd = temp1*temp2;
         if(Wtd == -INFINITY || Wtd == INFINITY || isnan(Wtd))
-            wtdq[t] = 0;
+            wtdq[term] = 0;
         else
-            wtdq[t] = Wtd;
+            wtdq[term] = Wtd;
 
     }
 
@@ -101,10 +101,10 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
 
     sort(score.begin(),score.end(), sortpairs);
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
-    for(int i=0;i<n;i++)
+    int end = min(n, size);
+    for(int i=0;i<end;i++)
         cout << left << setw(20) << score[i].first.name() << right << score[i].second << endl;
 
-    delete t;
     return score;
 }
 
