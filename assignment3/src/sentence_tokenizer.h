@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "abstract_tokenizer.h"
+#include "sentence.h"
 
 using namespace std;
 
@@ -20,14 +21,22 @@ class sentence_tokenizer : public abstract_tokenizer
         * @param s: the string to be broken down.
         * @return a vector<string>: the set of strings that make up s, split into sentences based on punctuation and grammar.
         */
-        vector<string> sentence_tokenize(const string &s); //vector of sentences?
+        vector<sentence> sentence_tokenize(const string &s); //vector of sentences?
 
-        //! @brief A method to check if a char is .
+        //! @brief A method to check if a char is either "?" OR "." OR "!".
         /*!
         * @param c: the char to be tested.
         * @return a bool: the truth value that is determined by testing the char c.
         */
         bool is_end(const char &c);
+
+        //! @brief A method to check if a string is an abbreviation.
+        /*!
+        * @param first: the string to be tested.
+        * @param second: This is the string which appears after first, it is used in the detection of abbreviations
+        * @return a bool: the truth value that is determined by testing the string first.
+        */
+        bool isAbbreviation(const string &first, const string &second);
 };
 
 #endif // SENTENCE_TOKENIZER_H
