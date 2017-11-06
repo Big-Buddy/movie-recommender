@@ -24,7 +24,7 @@ int main(){
 	}
 
     indexer* indexer1 = &idx;
-	cout << indexer1;
+	cout << *indexer1;
 
 	Query_Result q;
 	string query = "";
