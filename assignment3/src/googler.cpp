@@ -8,6 +8,7 @@
 #include "Query_Result.h"
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 
@@ -18,10 +19,17 @@ int main(){
 	cin >> filename;
 	fstream fin(filename.c_str());
 	string docName;
+    vector<document> ds;
 	while(fin >> docName){
 		document doc(docName);
-		doc >> idx;
+		ds.push_back(doc);
 	}
+
+    for(vector<document>::iterator docit = ds.begin(); docit != ds.end(); ++docit){
+        &*docit >> idx;
+    }
+
+    vector<index_item*> & test = idx.getItems();
 
 	cout << idx;
 

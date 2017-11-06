@@ -29,7 +29,7 @@ public:
      */
 	vector<string> getDocumentNames();
 
-	const index_item & operator [](string name);
+	index_item* operator [](string name);
 
 	//! @brief an operator<< overload
 	/*!

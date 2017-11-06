@@ -79,7 +79,7 @@ public:
     /*!
      * @return the dft of indexer.
      */
-    map<string,int> getDft();
+    map<string,int> & getDft();
 
     //! @brief an accessor for tftd1.
     /*!
@@ -103,13 +103,13 @@ public:
     /*!
      * @return the indexer's total1.
      */
-    map<index_item*, int> getTotal1();
+    map<index_item*, int> & getTotal1();
 
     //! @brief an accessor for total2.
     /*!
      * @return the indexer's total2.
      */
-    map<index_item*, int> getTotal2();
+    map<index_item*, int> & getTotal2();
 
 	//! @brief a function which normalizes the indexer.
 	void normalize();
@@ -119,7 +119,7 @@ public:
 	 * @param n: an int index.
 	 * @return the document at index n.
 	 */
-	const index_item & operator [](int n);
+	index_item* operator [](int n);
 
 
 	//! @brief an operator>> overload.
@@ -128,7 +128,7 @@ public:
 	 * @param idx: the indexer to which we are adding a document.
 	 * @return the document d.
 	 */
-	friend const index_item & operator >>(index_item & d,indexer & idx);
+	friend index_item & operator >>(index_item * d,indexer & idx);
 
 
 	//! @brief an exception to be thrown when attemptin to query an un-normalized indexer.

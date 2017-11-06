@@ -38,7 +38,7 @@ stopwords* indexer::getstpw(){
 	return stpw;
 }
 
-map<string,int> indexer::getDft(){
+map<string,int> & indexer::getDft(){
 	return dft;
 };
 
@@ -58,11 +58,11 @@ map<string, map<index_item*, double> > & indexer::getWtd(){
 	return wtd;
 }
 
-map<index_item*, int> indexer::getTotal1(){
+map<index_item*, int> & indexer::getTotal1(){
 	return total1;
 };
 
-map<index_item*, int> indexer::getTotal2(){
+map<index_item*, int> & indexer::getTotal2(){
 	return total2;
 };
 
@@ -118,41 +118,41 @@ void indexer::normalize(){
 /*!
  * Gets the indexer's n'th document.
  */
-const index_item & indexer::operator [](int n){
-	return *(items[n]);
+index_item* indexer::operator [](int n){
+	return items[n];
 }
 
 /*!
  * Adds a new document to the indexer, then calculates term frequency for that document and normalizes the indexer.
  */
-const index_item & operator >>(index_item & item, indexer & idx){
+index_item & operator >>(index_item * item, indexer & idx){
 	idx.normalized = false; // reading new item so indexer not normalized
-	idx.items.push_back(&item); // pushing item to documnet vector
-	string cont = item.get_content(); // string content of document
+	idx.items.push_back(item); // pushing item to documnet vector
+	string cont = item->get_content(); // string content of document
 	int total_1 = 0;
 	int total_2 = 0;
 	word_tokenizer t;
 	vector<string> tokens = t.word_tokenize(cont); // changing the content of document into tokens
 
-    string test = item.get_content();
+    string test = item->get_content();
 
 	for(int i=0;i<tokens.size();i++){
 		string s = tokens[i];
 
         //if the token is not a stopword, count it in tftd2
 		if(!idx.stpw->operator ()(s)) {
-            idx.tftd2[s][&item]++;
+            idx.tftd2[s][item]++;
             total_2++;
 		}
-        idx.tftd1[s][&item]++;
+        idx.tftd1[s][item]++;
         total_1++;
 	}
-	idx.total1[&item] = total_1;
-	idx.total2[&item]= total_2;
+	idx.total1[item] = total_1;
+	idx.total2[item]= total_2;
 	idx.normalize();
 	idx.N++; // counter for index of which document is read
 
-	return item;
+	return *item;
 }
 
 

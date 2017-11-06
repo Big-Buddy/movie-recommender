@@ -98,11 +98,13 @@ vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s,int
     //sort(score.begin(),score.end(), sortpairs);
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
     int end = min(n, size);
-    for(int i=0;i<end;i++) {
-        index_item item = ((indexer)idx)[i];
-        index_item *itemPointer = &item;
 
-        document *doc = dynamic_cast<document*>(itemPointer);
+    for(int i=0;i<end;i++) {
+        vector<index_item*> & test = idx.getItems();
+
+        index_item* item = idx[i];
+
+        document *doc = dynamic_cast<document*>(item);
 
         cout << left << setw(20) << doc->name() << right << score[i].second << endl;
     }

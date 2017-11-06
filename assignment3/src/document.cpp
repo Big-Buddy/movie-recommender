@@ -16,7 +16,6 @@ document::document(string name)
 	}
 	content = content.substr(0, content.size() - 1);
 	item_size = content.size();
-
 }
 
 

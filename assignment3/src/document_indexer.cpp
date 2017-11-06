@@ -17,11 +17,11 @@ document_indexer::~document_indexer(){
 }
 
 
-const index_item & document_indexer::operator [](string name){
+index_item* document_indexer::operator [](string name){
     for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
-        document *doc = static_cast<document*>(*itemsIt);
+        document *doc = dynamic_cast<document*>(*itemsIt);
         if(doc->name() == name){
-            return *doc;
+            return doc;
         }
     }
 }
@@ -50,11 +50,8 @@ ostream & operator <<(ostream & os,document_indexer & idx) {
     vector<string> documentNames = idx.getDocumentNames();
 
     //first, print the names row
-    for (int i = 0; i < size; ++i) {
-        index_item item = ((indexer)idx)[i];
-        index_item *itemPointer = &item;
-
-        document *doc = dynamic_cast<document*>(itemPointer);
+    for(vector<index_item*>::iterator itemIt = idx.getItems().begin(); itemIt != idx.getItems().end(); ++itemIt){
+        document *doc = dynamic_cast<document*>(*itemIt);
 
         os << right << setw(20) << doc->name();
     }
@@ -91,11 +88,9 @@ ostream & operator <<(ostream & os,document_indexer & idx) {
     os << endl;
     os << endl << "******* Filtered Document Matrix version *********" << endl;
     os << left << setw(20) << "Dictionary";
-    for (int i = 0; i < size; ++i) {
-        index_item item = ((indexer)idx)[i];
-        index_item *itemPointer = &item;
 
-        document *doc = dynamic_cast<document*>(itemPointer);
+    for(vector<index_item*>::iterator itemIt = idx.getItems().begin(); itemIt != idx.getItems().end(); ++itemIt){
+        document *doc = dynamic_cast<document*>(*itemIt);
 
         os << right << setw(20) << doc->name();
     }
@@ -133,16 +128,17 @@ ostream & operator <<(ostream & os,document_indexer & idx) {
 
     os << endl << "******* Document Frequency *********" << endl;
     os << left << setw(20) << "Dictionary" << right << setw(20) << "Document Frequency" << endl;
-    for (map<string, int>::iterator it = idx.getDft().begin(); it != idx.getDft().end(); ++it)
-        os << left << setw(20) << it->first << right << setw(20) << it->second << endl;
+    for (map<string, int>::const_iterator it = idx.getDft().begin(); it != idx.getDft().end(); ++it) {
+        string word = it->first;
+        int frequency = it->second;
+
+        os << left << setw(20) << word << right << setw(20) << frequency << endl;
+    }
 
     os << endl << "******* Tf-idf weight *********" << endl;
     os << left << setw(20) << "Dictionary";
-    for (int i = 0; i < size; ++i) {
-        index_item item = ((indexer)idx)[i];
-        index_item *itemPointer = &item;
-
-        document *doc = dynamic_cast<document*>(itemPointer);
+    for(vector<index_item*>::iterator itemIt = idx.getItems().begin(); itemIt != idx.getItems().end(); ++itemIt){
+        document *doc = dynamic_cast<document*>(*itemIt);
 
         os << right << setw(20) << doc->name();
     }
