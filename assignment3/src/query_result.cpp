@@ -95,7 +95,13 @@ vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s,int
         score.push_back(make_pair(*itemsIt, docScore));
     }
 
-    //sort(score.begin(),score.end(), sortpairs);
+    sort(score.begin(),score.end(), []( pair<index_item*,double>& a, pair<index_item*,double>& b) { return a.second > b.second; } );
+
+    return score;
+}
+
+void Query_Result::printDocResults(indexer & idx,string s,int n){
+    int size = idx.getSize();
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
     int end = min(n, size);
 
@@ -108,11 +114,4 @@ vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s,int
 
         cout << left << setw(20) << doc->name() << right << score[i].second << endl;
     }
-
-    return score;
-}
-
-
-bool sortpairs(const pair<index_item*,double> &a,const pair<index_item*,double> &b){
-    return (a.second > b.second);
 }

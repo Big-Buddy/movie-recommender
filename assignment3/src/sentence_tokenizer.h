@@ -19,9 +19,10 @@ class sentence_tokenizer : public abstract_tokenizer
         //! @brief A method to break down a string into a set of strings.
         /*!
         * @param s: the string to be broken down.
+        * @param docNum: the doc number of the string s (parentDocNum of sentence)
         * @return a vector<string>: the set of strings that make up s, split into sentences based on punctuation and grammar.
         */
-        vector<sentence> sentence_tokenize(const string &s); //vector of sentences?
+        vector<sentence> sentence_tokenize(const string &s, int docNum); //vector of sentences?
 
         //! @brief A method to check if a char is either "?" OR "." OR "!".
         /*!

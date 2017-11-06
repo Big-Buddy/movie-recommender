@@ -7,8 +7,8 @@
  * It then creates a filestream with the string name, and reads its contents into the document's content field
  * It then sets the document's size to the size of content
  */
-document::document(string name)
-	:filename(name) {
+document::document(string name, int num)
+	:filename(name), docNum(num) {
 	ifstream fin(filename);
 	string new_content;
 	while (fin >> new_content) {
@@ -34,6 +34,13 @@ document::document()
  */
 string document::name() const{
 	return filename;
+}
+
+/*!
+ * This accessor returns the document's filename
+ */
+int document::getDocNum() const{
+	return docNum;
 }
 
 /*!

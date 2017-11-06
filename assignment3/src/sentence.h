@@ -13,8 +13,10 @@ class sentence : public index_item
 
         //! @brief Another constructor.
         /*!  @param s: content of the sentence to be constructed.
+         *   @param p: the position of the sentence in the string.
+         *   @param docNum: the number of the document from which the string originates.
         */
-        sentence(string s, int p);
+        sentence(string s, int p, int docNum);
 
         ~sentence();
 
@@ -27,6 +29,9 @@ class sentence : public index_item
     private:
         //! @brief A private int: the start position (in characters) of the sentence in a particular document.
         int pos;
+
+        //! @brief A private int: the sentence's document number (creates a link between sentences and documents. will be used for essay generation)
+        int parentDocNum;
 };
 
 #endif // SENTENCE_H

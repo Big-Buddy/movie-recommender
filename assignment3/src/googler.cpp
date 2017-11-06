@@ -23,9 +23,11 @@ int main(){
 	fstream fin(filename.c_str());
 	string docName;
     vector<document> docVec;
+    int docNumCounter = 0;
 	while(fin >> docName){
-		document doc(docName);
+		document doc(docName, docNumCounter);
         docVec.push_back(doc);
+        ++docNumCounter;
 	}
 
     vector<vector<sentence> > sentVecVec;
@@ -33,7 +35,7 @@ int main(){
     sentence_tokenizer st;
     for(vector<document>::iterator docit = docVec.begin(); docit != docVec.end(); ++docit){
         &*docit >> idx;
-        sentVec = st.sentence_tokenize(docit->get_content());
+        sentVec = st.sentence_tokenize(docit->get_content(), docit->getDocNum());
         sentVecVec.push_back(sentVec);
     }
 
@@ -47,6 +49,7 @@ int main(){
 
 	Query_Result q;
 	string query = "";
+	Query_Result sentQ;
 
 	while(true){
 		cout << "\nEnter the query you want to search for or -1 to exit:" << endl;
@@ -58,10 +61,17 @@ int main(){
 		int n;
 		cin >> n;
 		vector<pair<index_item*, double> > score;
-		if(n == -1)
-			score = q.query(idx,query);
-		else
-			score = q.query(idx,query,n);
+		vector<pair<index_item*, double> > sentenceScore;
+		if(n == -1) {
+            score = q.query(idx, query);
+			q.printDocResults(idx, query);
+			sentenceScore = sentQ.query(sentIdx, query);
+        }
+		else {
+            score = q.query(idx, query, n);
+			q.printDocResults(idx, query, n);
+			sentenceScore = sentQ.query(sentIdx, query, n);
+		}
 	}
 	return 0;
 }

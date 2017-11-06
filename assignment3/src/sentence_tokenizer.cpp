@@ -24,7 +24,7 @@ sentence_tokenizer::~sentence_tokenizer()
  * We continue iterating until we have exhausted all the tokens.
  * Finally, it returns the new vector of sentences.
  */
-vector<sentence> sentence_tokenizer::sentence_tokenize(const string &s)
+vector<sentence> sentence_tokenizer::sentence_tokenize(const string &s, int docNum)
 {
     //string s is passed and we store it and make a vector of string
     string content = s;
@@ -53,7 +53,7 @@ vector<sentence> sentence_tokenizer::sentence_tokenize(const string &s)
             if (!isAbbreviation(*sit, temp_buffer[distance(temp_buffer.begin(), sit)+1]))
             {
                 temp_string += *sit;
-                result_buffer.push_back(sentence(temp_string, position));
+                result_buffer.push_back(sentence(temp_string, position, docNum));
                 temp_string = "";
                 temp_position += sit->length() + 1;
                 position = temp_position;

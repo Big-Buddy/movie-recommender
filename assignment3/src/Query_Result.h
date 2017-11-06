@@ -6,6 +6,7 @@
 #include "document.h"
 #include "indexer.h"
 #include "index_item.h"
+#include "document_indexer.h"
 #include <algorithm>
 using namespace std;
 
@@ -41,15 +42,9 @@ public:
 	 */
 	vector<pair<index_item*,double> > query(indexer & idx,string s,int n = 10);
 
-};
+	void printDocResults(indexer & idx,string s,int n = 10);
 
-//! @brief Compares two document-double pairs
-/*!
- * @param a: the first score pair
- * @param b: the second score pair
- * @return a boolean: whether the a's score is greater than b's
- */
-bool sortpairs(const pair<index_item*,double> &a,const pair<index_item*,double> &b);
+};
 
 
 #endif /* QUERY_STRING_H_ */

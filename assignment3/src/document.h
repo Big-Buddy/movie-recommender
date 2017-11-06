@@ -11,6 +11,9 @@ private:
 	//! @brief A private string: the document's file name.
 	string filename;
 
+	//! @brief A private int: a document number (cheapo identifier, mainly used for sentences)
+	int docNum;
+
 public:
 	//! @brief A default constructor.
 	document();
@@ -19,14 +22,21 @@ public:
 
 	//! @brief Another constructor.
 	/*!  @param filename: filename of the document to be constructed.
+	 *   @param num: docNum of the document to be constructed.
 	 */
-	document(string filename);
+	document(string name, int num);
 
 	//! @brief An accessor for the document's name.
 	/*!
 	 * @return A string: name of the document.
 	 */
 	string name() const;
+
+	//! @brief An accessor for the document's number.
+	/*!
+	 * @return An int: docNum of the document.
+	 */
+	int getDocNum() const;
 
 	//! @brief A friend operator<< overload.
 	/*!

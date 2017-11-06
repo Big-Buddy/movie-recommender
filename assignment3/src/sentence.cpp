@@ -19,10 +19,11 @@ sentence::~sentence()
  * It also takes int p, and sets the sentence's supposed position in a document to that int
  * It then splits the content of the sentence based on white spaces and sets the size of the sentence to the number of tokens that were split
  */
-sentence::sentence(string s, int p)
+sentence::sentence(string s, int p, int docNum)
 {
     content = s;
     pos = p;
+    parentDocNum = docNum;
     istringstream iss(content);
     vector<string> tokens;
     copy(istream_iterator<string>(iss),istream_iterator<string>(),back_inserter(tokens));
