@@ -6,6 +6,8 @@
 #include "document_indexer.h"
 #include "document.h"
 #include "Query_Result.h"
+#include "sentence.h"
+#include "sentence_tokenizer.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -14,22 +16,32 @@ using namespace std;
 
 int main(){
 	document_indexer idx;
+    indexer sentIdx;
 	cout << "Enter filename:" << endl;
 	string filename;
 	cin >> filename;
 	fstream fin(filename.c_str());
 	string docName;
-    vector<document> ds;
+    vector<document> docVec;
 	while(fin >> docName){
 		document doc(docName);
-		ds.push_back(doc);
+        docVec.push_back(doc);
 	}
 
-    for(vector<document>::iterator docit = ds.begin(); docit != ds.end(); ++docit){
+    vector<vector<sentence> > sentVecVec;
+    vector<sentence> sentVec;
+    sentence_tokenizer st;
+    for(vector<document>::iterator docit = docVec.begin(); docit != docVec.end(); ++docit){
         &*docit >> idx;
+        sentVec = st.sentence_tokenize(docit->get_content());
+        sentVecVec.push_back(sentVec);
     }
 
-    vector<index_item*> & test = idx.getItems();
+    for(vector<vector<sentence> >::iterator sentVecIt = sentVecVec.begin(); sentVecIt != sentVecVec.end(); ++sentVecIt){
+        for(vector<sentence>::iterator sentIt = sentVecIt->begin(); sentIt != sentVecIt->end(); ++sentIt){
+            &*sentIt >> sentIdx;
+        }
+    }
 
 	cout << idx;
 
