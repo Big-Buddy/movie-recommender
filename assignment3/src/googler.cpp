@@ -3,6 +3,7 @@
 // Mohamed Omar 40013242
 // Loic Huss - 40000298
 #include "indexer.h"
+#include "document_indexer.h"
 #include "document.h"
 #include "Query_Result.h"
 #include <iostream>
@@ -11,7 +12,7 @@ using namespace std;
 
 
 int main(){
-	indexer idx;
+	document_indexer idx;
 	cout << "Enter filename:" << endl;
 	string filename;
 	cin >> filename;
@@ -22,7 +23,9 @@ int main(){
 		doc >> idx;
 	}
 
-	cout << idx;
+    indexer* indexer1 = &idx;
+	cout << indexer1;
+
 	Query_Result q;
 	string query = "";
 
@@ -35,7 +38,7 @@ int main(){
 		cout << "Enter the number of documents for the top queries or -1 to skip:" << endl;
 		int n;
 		cin >> n;
-		vector<pair<document, double> > score;
+		vector<pair<index_item*, double> > score;
 		if(n == -1)
 			score = q.query(idx,query);
 		else

@@ -1,4 +1,4 @@
-#include "query_Result.h"
+#include "query_result.h"
 #include "word_tokenizer.h"
 #include <algorithm>
 #include <vector>
@@ -11,7 +11,7 @@ Query_Result::Query_Result(){ }
 
 Query_Result::~Query_Result(){}
 
-const vector<pair<document,double> > & Query_Result::scorevector(){
+const vector<pair<index_item*,double> > & Query_Result::scorevector(){
     return score;
 }
 
@@ -21,7 +21,7 @@ const vector<pair<document,double> > & Query_Result::scorevector(){
  * Using the weights, it calculates every document's score.
  * It the prints out the n top scores, and returns all scores.
  */
-vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n) {
+vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s,int n) {
     score.clear();
     int size = idx.getSize();
 
@@ -46,7 +46,7 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
         string term = it->first;
         int df = 0;
 
-        for(map<string, int>::const_iterator docIt = idx.getTFtd2()[term].begin(); docIt !=  idx.getTFtd2()[term].end(); ++docIt){
+        for(map<index_item*, int>::const_iterator docIt = idx.getTFtd2()[term].begin(); docIt !=  idx.getTFtd2()[term].end(); ++docIt){
             int frequency = docIt->second;
             if(frequency > 0)
                 ++df;
@@ -71,11 +71,7 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
 
     }
 
-    //using those, calculate the score
-    vector<string> documentNames = idx.getDocumentNames();
-
-    for(vector<string>::const_iterator namesIt = documentNames.begin(); namesIt != documentNames.end(); ++namesIt){
-        string docName = *namesIt;
+    for(vector<index_item*>::const_iterator itemsIt = idx.getItems().begin(); itemsIt != idx.getItems().end(); ++itemsIt){
         double Wiqij = 0;  //sum of the weight of term i in query * weight of term i in documents
         double Wiq = 0;  //square root of the sum of the weights of term i in query squared
         double Wij = 0;  //square root of the sum of the weights of term i in documents squared
@@ -83,7 +79,7 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
         for(map<string, double >::const_iterator it = wtdq.begin();it != wtdq.end();it++){
             string term = it->first;
             double weightInQuery = it->second;
-            double weightInDocument = idx.getWtd()[term][docName];
+            double weightInDocument = idx.getWtd()[term][*itemsIt];
 
             Wiqij += weightInDocument * weightInQuery;
             Wiq += pow(weightInQuery,2);
@@ -96,19 +92,25 @@ vector<pair<document,double> > Query_Result::query(indexer & idx,string s,int n)
         else
             docScore = (Wiqij / (sqrt(Wiq) * sqrt(Wij)));
 
-        score.push_back(make_pair(idx[docName], docScore));
+        score.push_back(make_pair(*itemsIt, docScore));
     }
 
-    sort(score.begin(),score.end(), sortpairs);
+    //sort(score.begin(),score.end(), sortpairs);
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
     int end = min(n, size);
-    for(int i=0;i<end;i++)
-        cout << left << setw(20) << score[i].first.name() << right << score[i].second << endl;
+    for(int i=0;i<end;i++) {
+        index_item item = ((indexer)idx)[i];
+        index_item *itemPointer = &item;
+
+        document *doc = dynamic_cast<document*>(itemPointer);
+
+        cout << left << setw(20) << doc->name() << right << score[i].second << endl;
+    }
 
     return score;
 }
 
 
-bool sortpairs(const pair<document,double> &a,const pair<document,double> &b){
+bool sortpairs(const pair<index_item*,double> &a,const pair<index_item*,double> &b){
     return (a.second > b.second);
 }

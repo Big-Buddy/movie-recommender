@@ -11,7 +11,7 @@ class index_item
         //! @brief A default constructor.
         index_item();
 
-        virtual ~index_item() = 0;
+        virtual ~index_item();
 
         //! @brief An accessor for the item's size.
         /*!

@@ -5,6 +5,7 @@
 #include "vector"
 #include "document.h"
 #include "indexer.h"
+#include "index_item.h"
 #include <algorithm>
 using namespace std;
 
@@ -17,7 +18,7 @@ private:
     * Every document's score is stored as its own document-double pair.
     * All documents' scores are then added to the score vector.
     */
-	vector<pair<document,double> > score;
+	vector<pair<index_item*,double> > score;
 public:
 	//! @brief The default constructor.
 	Query_Result();
@@ -28,7 +29,7 @@ public:
 	/*!
 	 * @return The score of the query result.
 	 */
-	const vector<pair<document,double> > & scorevector();
+	const vector<pair<index_item*,double> > & scorevector();
 
 	//! @brief A function to apply a query and return a result.
 	/*!
@@ -38,7 +39,7 @@ public:
 	 * @param n: an optional int to delimit the amount of results printed out, default is 10.
 	 * @return the score
 	 */
-	vector<pair<document,double> > query(indexer & idx,string s,int n = 10);
+	vector<pair<index_item*,double> > query(indexer & idx,string s,int n = 10);
 
 };
 
@@ -48,7 +49,7 @@ public:
  * @param b: the second score pair
  * @return a boolean: whether the a's score is greater than b's
  */
-bool sortpairs(const pair<document,double> &a,const pair<document,double> &b);
+bool sortpairs(const pair<index_item*,double> &a,const pair<index_item*,double> &b);
 
 
 #endif /* QUERY_STRING_H_ */

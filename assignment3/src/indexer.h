@@ -3,7 +3,7 @@
 #ifndef INDEXER_H_
 #define INDEXER_H_
 
-#include "document.h"
+#include "index_item.h"
 #include "stopwords.h"
 #include "word_tokenizer.h"
 #include <vector>
@@ -15,8 +15,8 @@ using namespace std;
 
 class indexer{
 
-private:
-	//! @brief A private  int: the number of documents.
+protected:
+	//! @brief A private  int: the number of index items.
 	int N;
 
 	//! @brief a private boolean: whether the indexer has been normalized.
@@ -26,30 +26,30 @@ private:
 	stopwords *stpw;
 
 	//! @brief a private vector of documents: the list of documents which's score the indexer should keep.
-	vector<document> documents;
+	vector<index_item*> items;
 
 	//! @brief a private map of string, int: the total number of documents that a token appears in. (Document Frequency)
 	map<string,int> dft;
 
 	//! @brief a private map of string, pair<string, int> vector: the token frequency in documents. The pair is document name - weight in that document
-	map<string, map<string, int> > tftd1;
+	map<string, map<index_item*, int> > tftd1;
 
 	//! @brief a private map of string, pair<string, int> vector: The same as tftd1, but with stopwords removed.
-	map<string, map<string, int> > tftd2;
+	map<string, map<index_item*, int> > tftd2;
 
 	//! @brief a private map of string, pair<string, double> vector: the weight of each token in each document, stored similarly to tftd1 but for weight instead of frequency.
-	map<string, map<string, double> > wtd;
+	map<string, map<index_item*, double> > wtd;
 
 	//! @brief a private pair vector: the total number of words per document, stored similarly to the weight in tftd1.
-    map<string, int> total1;
+    map<index_item*, int> total1;
 
 	//! @brief a private pair vector: the same as total1, but without stopwords.
-    map<string, int> total2;
+    map<index_item*, int> total2;
 public:
 	//! @brief a default constructor.
 	indexer();
 
-	~indexer();
+	virtual ~indexer();
 
 	//! @brief an accessor for size.
 	/*!
@@ -73,25 +73,43 @@ public:
 	/*!
 	 * @return the documents in indexer.
 	 */
-	vector<document> & getdocuments();
+	vector<index_item*> & getItems();
 
-    //!@brief gets the documents names
+    //! @brief an accessor for dft.
     /*!
-     * @return the names of the documents in indexer
+     * @return the dft of indexer.
      */
-    vector<string> getDocumentNames();
+    map<string,int> getDft();
+
+    //! @brief an accessor for tftd1.
+    /*!
+     * @return the indexer's tftd1.
+     */
+    map<string, map<index_item*, int> > & getTFtd1();
 
 	//! @brief an accessor for tftd2.
 	/*!
 	 * @return the indexer's tftd2.
 	 */
-    map<string, map<string, int> > & getTFtd2();
+    map<string, map<index_item*, int> > & getTFtd2();
 
 	//! @brief an accessor for wtd.
 	/*!
 	 * @return the indexer's wtd.
 	 */
-    map<string, map<string, double> > & getWtd();
+    map<string, map<index_item*, double> > & getWtd();
+
+    //! @brief an accessor for total1.
+    /*!
+     * @return the indexer's total1.
+     */
+    map<index_item*, int> getTotal1();
+
+    //! @brief an accessor for total2.
+    /*!
+     * @return the indexer's total2.
+     */
+    map<index_item*, int> getTotal2();
 
 	//! @brief a function which normalizes the indexer.
 	void normalize();
@@ -101,15 +119,8 @@ public:
 	 * @param n: an int index.
 	 * @return the document at index n.
 	 */
-	const document & operator [](int n);
+	const index_item & operator [](int n);
 
-
-	//! @brief another operator[] overload.
-	/*!
-	 * @param name: the name of the document to get.
-	 * @return the document with name n.
-	 */
-	const document & operator [](string n);
 
 	//! @brief an operator>> overload.
 	/*!
@@ -117,7 +128,7 @@ public:
 	 * @param idx: the indexer to which we are adding a document.
 	 * @return the document d.
 	 */
-	friend const document & operator >>(document & d,indexer & idx);
+	friend const index_item & operator >>(index_item & d,indexer & idx);
 
 	//! @brief an operator<< overload
 	/*!
@@ -138,7 +149,7 @@ public:
  * @param b: the second score pair
  * @return a boolean: whether the a's score is greater than b's
  */
-bool sortpairs(const pair<document,double> &a,const pair<document,double> &b);
+bool sortpairs(const pair<index_item,double> &a,const pair<index_item,double> &b);
 
 
 #endif /* INDEXER_H_ */
