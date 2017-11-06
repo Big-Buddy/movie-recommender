@@ -26,6 +26,11 @@ class sentence : public index_item
         */
         int getPos() const;
 
+        //! @brief An accessor for the sentence's document number.
+        /*!
+        * @return An int, the document number.
+        */
+        int getParentDocNum() const;
     private:
         //! @brief A private int: the start position (in characters) of the sentence in a particular document.
         int pos;

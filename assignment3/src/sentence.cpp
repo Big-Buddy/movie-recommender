@@ -37,3 +37,10 @@ int sentence::getPos() const
 {
     return pos;
 }
+
+/*!
+ * This accessor returns the sentence's parent document number
+ */
+int sentence::getParentDocNum() const {
+    return parentDocNum;
+}
