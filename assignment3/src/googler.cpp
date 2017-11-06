@@ -23,8 +23,7 @@ int main(){
 		doc >> idx;
 	}
 
-    indexer* indexer1 = &idx;
-	cout << *indexer1;
+	cout << idx;
 
 	Query_Result q;
 	string query = "";

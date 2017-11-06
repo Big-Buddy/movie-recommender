@@ -30,6 +30,14 @@ public:
 	vector<string> getDocumentNames();
 
 	const index_item & operator [](string name);
+
+	//! @brief an operator<< overload
+	/*!
+	 * @param os: the outstream which will receive the matrix information
+	 * @param idx: the indexer from which we take information
+	 * @return the outstream with matrix information.
+	 */
+	friend ostream & operator <<(ostream & os, document_indexer & idx);
 };
 
 #endif /* _DOCUMENT_INDEXER_H_ */

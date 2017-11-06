@@ -130,13 +130,6 @@ public:
 	 */
 	friend const index_item & operator >>(index_item & d,indexer & idx);
 
-	//! @brief an operator<< overload
-	/*!
-	 * @param os: the outstream which will receive the matrix information
-	 * @param idx: the indexer from which we take information
-	 * @return the outstream with matrix information.
-	 */
-	friend ostream & operator <<(ostream & os,indexer & idx);
 
 	//! @brief an exception to be thrown when attemptin to query an un-normalized indexer.
     enum Exceptions { INDEX_NOT_NORMALIZED };
