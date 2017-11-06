@@ -149,8 +149,8 @@ index_item & operator >>(index_item * item, indexer & idx){
 	}
 	idx.total1[item] = total_1;
 	idx.total2[item]= total_2;
-	idx.normalize();
 	idx.N++; // counter for index of which document is read
+	idx.normalize();
 
 	return *item;
 }

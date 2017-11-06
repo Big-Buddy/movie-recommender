@@ -152,13 +152,13 @@ ostream & operator <<(ostream & os,document_indexer & idx) {
 
         //print each document's weight for the given term
         for(vector<index_item*>::const_iterator itemIt = idx.getItems().begin(); itemIt != idx.getItems().end(); ++itemIt){
-            int freq;
+            double weight;
             if(isnan(docWeight[*itemIt])){
-                freq = 0;
+                weight = 0;
             }else{
-                freq = docWeight[*itemIt];
+                weight = docWeight[*itemIt];
             }
-            os << right << setw(20) << freq;
+            os << right << setw(20) << weight;
         }
 
         os << endl;
