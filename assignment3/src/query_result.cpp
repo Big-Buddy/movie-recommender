@@ -21,7 +21,7 @@ const vector<pair<index_item*,double> > & Query_Result::scorevector(){
  * Using the weights, it calculates every document's score.
  * It the prints out the n top scores, and returns all scores.
  */
-vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s,int n) {
+vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s) {
     score.clear();
     int size = idx.getSize();
 
@@ -114,4 +114,25 @@ void Query_Result::printDocResults(indexer & idx,string s,int n){
 
         cout << left << setw(20) << doc->name() << right << score[i].second << endl;
     }
+}
+
+string Query_Result::generateEssayFromSentences(int wordCount) const {
+    string str;
+    vector<sentence*> chosenSentences;
+    int usedWords = 0;
+    for(vector<pair<index_item*, double> >::const_iterator scoreIterator = score.begin(); scoreIterator!= score.end(); ++scoreIterator){
+        if(usedWords >= wordCount){
+            break;
+        }
+        sentence *item = dynamic_cast<sentence*>(scoreIterator->first);
+        usedWords += item->size();
+        chosenSentences.push_back(item);
+    }
+
+    sort(chosenSentences.begin(), chosenSentences.end());
+
+    for(vector<sentence*>::iterator sentenceIt = chosenSentences.begin(); sentenceIt!=chosenSentences.end(); ++sentenceIt){
+        str += (*sentenceIt)->get_content() + "\n";
+    }
+    return str;
 }

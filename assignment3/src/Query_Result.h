@@ -7,6 +7,7 @@
 #include "indexer.h"
 #include "index_item.h"
 #include "document_indexer.h"
+#include "sentence.h"
 #include <algorithm>
 using namespace std;
 
@@ -40,9 +41,11 @@ public:
 	 * @param n: an optional int to delimit the amount of results printed out, default is 10.
 	 * @return the score
 	 */
-	vector<pair<index_item*,double> > query(indexer & idx,string s,int n = 10);
+	vector<pair<index_item*,double> > query(indexer & idx,string s);
 
 	void printDocResults(indexer & idx,string s,int n = 10);
+
+	string generateEssayFromSentences(int wordCount) const;
 
 };
 
