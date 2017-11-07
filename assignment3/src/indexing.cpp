@@ -1,5 +1,5 @@
 //Authors
-//Alexandre Pelletier - 27259292
+// Alexandre Pelletier - 27259292
 // Martin Spasov 40000916
 // Loic Huss - 40000298
 #include "indexer.h"
