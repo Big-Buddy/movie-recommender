@@ -1,4 +1,3 @@
-
 #include "stopwords.h"
 #include <fstream>
 

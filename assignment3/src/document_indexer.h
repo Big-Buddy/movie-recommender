@@ -1,5 +1,3 @@
-
-
 #ifndef _DOCUMENT_INDEXER_H_
 #define _DOCUMENT_INDEXER_H_
 
@@ -12,7 +10,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 class document_indexer: public indexer {

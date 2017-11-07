@@ -1,5 +1,3 @@
-
-
 #ifndef QUERY_STRING_H_
 #define QUERY_STRING_H_
 #include "vector"

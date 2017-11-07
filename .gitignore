@@ -4,4 +4,4 @@
 cmake-build-debug/
 cmakelists.txt
 .DS_Store
-.vs/
+.vs/.cproject/.project

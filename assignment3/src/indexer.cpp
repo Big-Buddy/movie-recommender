@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 

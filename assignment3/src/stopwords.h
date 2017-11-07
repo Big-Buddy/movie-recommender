@@ -1,5 +1,3 @@
-
-
 #ifndef STOPWORDS_H_
 #define STOPWORDS_H_
 
