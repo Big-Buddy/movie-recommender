@@ -28,7 +28,6 @@ vector<sentence> sentence_tokenizer::sentence_tokenize(const string &s, int docN
 {
     //string s is passed and we store it and make a vector of string
     string content = s;
-    cout << s << endl;
     vector<string> temp_buffer;
     vector<sentence> result_buffer;
     //begin tokenizing and splitting
@@ -101,7 +100,6 @@ bool sentence_tokenizer::isAbbreviation(const string &first, const string &secon
         is_abbreviated = true;
     }
 
-    cout << first << " " << first.length() << endl;
     if (isupper(first.at(0)) && isupper(second.at(0)) && (first.length() <= 4))
     {
         is_abbreviated = true;

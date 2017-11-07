@@ -1,3 +1,7 @@
+//Authors
+//Alexandre Pelletier - 27259292
+// Martin Spasov 40000916
+// Loic Huss - 40000298
 #include "indexer.h"
 #include "document_indexer.h"
 #include "document.h"
@@ -12,7 +16,6 @@ using namespace std;
 
 int main(){
 	document_indexer idx;
-    indexer sentIdx;
 
     //first, get the index file name (file with all the other filenames in it
 	cout << "Enter filename:" << endl;
@@ -30,23 +33,10 @@ int main(){
         ++docNumCounter;
 	}
 
-    vector<vector<sentence> > sentVecVec;
-    vector<sentence> sentVec;
-    sentence_tokenizer st;
     //add all the documents in docVec to the document_indexer, then create a sentence vector out of the document's contents.
     //then, add this sentence vector to a vector of all sentence vectors.
     for(vector<document>::iterator docit = docVec.begin(); docit != docVec.end(); ++docit){
         &*docit >> idx;
-
-        sentVec = st.sentence_tokenize(docit->get_content(), docit->getDocNum());
-        sentVecVec.push_back(sentVec);
-    }
-
-    //iterate through every single sentence, and add them to the indexer
-    for(vector<vector<sentence> >::iterator sentVecIt = sentVecVec.begin(); sentVecIt != sentVecVec.end(); ++sentVecIt){
-        for(vector<sentence>::iterator sentIt = sentVecIt->begin(); sentIt != sentVecIt->end(); ++sentIt){
-            &*sentIt >> sentIdx;
-        }
     }
 
     //print out the document_indexer for shit n giggles
@@ -54,7 +44,6 @@ int main(){
 
 	Query_Result q;
 	string query = "";
-	Query_Result sentQ;
 
 	while(true){
         //ask the user for the query he wishes to search for
@@ -73,7 +62,6 @@ int main(){
 
         //calculate the scores. I guess we don't really need to store them anywhere, since they're stored in query_result.score anyways, but it's whatever.
         score = q.query(idx, query);
-        sentenceScore = sentQ.query(sentIdx, query);
 
         //depending on user input, print either the top n scores, or all of them (only does this for document_indexer, as indexer has no name, and thus cannot do this.
 		if(n == -1) {
@@ -83,8 +71,6 @@ int main(){
 			q.printDocResults(idx, query, n);
 		}
 
-        string test = sentQ.generateEssayFromSentences(50);
-        cout << endl << test << endl;
 	}
 	return 0;
 }
