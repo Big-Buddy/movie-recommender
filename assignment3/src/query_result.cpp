@@ -120,19 +120,28 @@ string Query_Result::generateEssayFromSentences(int wordCount) const {
     string str;
     vector<sentence*> chosenSentences;
     int usedWords = 0;
+
     for(vector<pair<index_item*, double> >::const_iterator scoreIterator = score.begin(); scoreIterator!= score.end(); ++scoreIterator){
-        if(usedWords >= wordCount){
-            break;
-        }
+
         sentence *item = dynamic_cast<sentence*>(scoreIterator->first);
-        usedWords += item->size();
-        chosenSentences.push_back(item);
+        if ((item->size() + usedWords) <= wordCount)
+        {
+            usedWords += item->size();
+            chosenSentences.push_back(item);
+        }
     }
 
-    sort(chosenSentences.begin(), chosenSentences.end());
+    if (!chosenSentences.empty())
+    {
+        sort(chosenSentences.begin(), chosenSentences.end());
 
-    for(vector<sentence*>::iterator sentenceIt = chosenSentences.begin(); sentenceIt!=chosenSentences.end(); ++sentenceIt){
-        str += (*sentenceIt)->get_content() + "\n";
+        for(vector<sentence*>::iterator sentenceIt = chosenSentences.begin(); sentenceIt!=chosenSentences.end(); ++sentenceIt){
+            str += (*sentenceIt)->get_content() + "\n";
+        }
+    } else
+    {
+        str = "Cannot generate an essay with so few words. Please increase your desired word count for the essay.";
     }
+
     return str;
 }
