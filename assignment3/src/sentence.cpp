@@ -44,3 +44,17 @@ int sentence::getPos() const
 int sentence::getParentDocNum() const {
     return parentDocNum;
 }
+
+bool sentence::operator<(const sentence &other) {
+    if(this->getParentDocNum() > other.getParentDocNum())
+        return false;
+    else if(this->getParentDocNum() < other.getParentDocNum())
+        return true;
+    else{
+        if(this->getPos() < other.getPos())
+            return true;
+        else
+            return false;
+
+    }
+}

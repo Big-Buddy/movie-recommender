@@ -31,6 +31,8 @@ class sentence : public index_item
         * @return An int, the document number.
         */
         int getParentDocNum() const;
+
+        bool operator<(const sentence & other);
     private:
         //! @brief A private int: the start position (in characters) of the sentence in a particular document.
         int pos;

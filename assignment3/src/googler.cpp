@@ -8,6 +8,7 @@
 #include "Query_Result.h"
 #include "sentence.h"
 #include "sentence_tokenizer.h"
+#include "essay_generator.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
