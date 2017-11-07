@@ -41,6 +41,7 @@ int main(){
     //then, add this sentence vector to a vector of all sentence vectors.
     for(vector<document>::iterator docit = docVec.begin(); docit != docVec.end(); ++docit){
         &*docit >> idx;
+
         sentVec = st.sentence_tokenize(docit->get_content(), docit->getDocNum());
         sentVecVec.push_back(sentVec);
     }
@@ -87,7 +88,7 @@ int main(){
 		}
 
         string test = sentQ.generateEssayFromSentences(50);
-        cout << test;
+        cout << endl << test << endl;
 	}
 	return 0;
 }
