@@ -25,6 +25,13 @@ index_item* document_indexer::operator [](string name){
     }
 }
 
+/*!
+ * Gets the indexer's n'th document.
+ */
+index_item* document_indexer::operator [](int n){
+    return items[n];
+}
+
 vector<string> document_indexer::getDocumentNames(){
     vector<string> names;
 

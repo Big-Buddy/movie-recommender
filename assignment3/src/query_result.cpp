@@ -21,7 +21,7 @@ const vector<pair<index_item*,double> > & Query_Result::scorevector(){
  * Using the weights, it calculates every document's score.
  * It the prints out the n top scores, and returns all scores.
  */
-vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s) {
+void Query_Result::query(indexer & idx,string s) {
     score.clear();
     int size = idx.getSize();
 
@@ -96,14 +96,12 @@ vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s) {
     }
 
     sort(score.begin(),score.end(), []( pair<index_item*,double>& a, pair<index_item*,double>& b) { return a.second > b.second; } );
-
-    return score;
 }
 
 /*!
  * This function prints the items contained in the index as documents. Printing out the name of the document and its score.
  */
-void Query_Result::printDocResults(indexer & idx,string s,int n){
+void Query_Result::printDocResults(document_indexer & idx,string s,int n){
     int size = idx.getSize();
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
     int end = min(n, size);

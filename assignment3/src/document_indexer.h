@@ -36,6 +36,13 @@ public:
 	 * @return the outstream with matrix information.
 	 */
 	friend ostream & operator <<(ostream & os, document_indexer & idx);
+
+	//! @brief an operator[] overload.
+	/*!
+	 * @param n: an int index.
+	 * @return the document at index n.
+	 */
+	index_item* operator [](int n);
 };
 
 #endif /* _DOCUMENT_INDEXER_H_ */

@@ -39,7 +39,7 @@ public:
 	 * @param n: an optional int to delimit the amount of results printed out, default is 10.
 	 * @return the score
 	 */
-	vector<pair<index_item*,double> > query(indexer & idx,string s);
+	void query(indexer & idx,string s);
 
     //! @brief A function to print information about the documents found in indexer.
 	/*!
@@ -48,7 +48,7 @@ public:
 	 * @param n: the top-n documents to be returned
 	 * @return the score
 	 */
-	void printDocResults(indexer & idx,string s,int n = 10);
+	void printDocResults(document_indexer & idx,string s,int n = 10);
 
 	//! @brief A function to generate an essay from our queried sentences.
 	/*!

@@ -18,7 +18,7 @@
 using namespace std;
 
 
-int main(){
+int main() {
     indexer sentIdx;
 
     map<string, string> choices;
@@ -117,8 +117,7 @@ int main(){
 
 
     Query_Result sentQ;
-    vector<pair<index_item*, double> > sentenceScore;
-    sentenceScore = sentQ.query(sentIdx, topic);
+    sentQ.query(sentIdx, topic);
 
     string newEssay = sentQ.generateEssayFromSentences(numWords);
 

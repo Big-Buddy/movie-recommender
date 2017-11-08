@@ -117,7 +117,7 @@ public:
 	 * @param n: an int index.
 	 * @return the document at index n.
 	 */
-	index_item* operator [](int n);
+	virtual index_item* operator [](int n);
 
 
 	//! @brief an operator>> overload.
