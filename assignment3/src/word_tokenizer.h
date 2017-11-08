@@ -14,6 +14,7 @@ public:
     //! @brief A default constructor.
 	word_tokenizer();
 
+	//! @brief A default destructor.
 	~word_tokenizer();
 
     //! @brief A method to break down a string into a set of strings.

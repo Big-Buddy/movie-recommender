@@ -5,7 +5,9 @@
 class abstract_tokenizer
 {
     public:
+        //! @brief A default constructor.
         abstract_tokenizer();
+        //! @brief A virtual destructor.
         virtual ~abstract_tokenizer();
 
 };

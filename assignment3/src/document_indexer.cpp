@@ -15,7 +15,9 @@ document_indexer::document_indexer():indexer()
 document_indexer::~document_indexer(){
 }
 
-
+/*!
+ * Iterates through all items, and returns the document with filename name
+ */
 index_item* document_indexer::operator [](string name){
     for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
         document *doc = dynamic_cast<document*>(*itemsIt);
@@ -32,6 +34,9 @@ index_item* document_indexer::operator [](int n){
     return items[n];
 }
 
+/*!
+ * Iterates through all documents, and returns a vector of all names.
+ */
 vector<string> document_indexer::getDocumentNames(){
     vector<string> names;
 

@@ -23,6 +23,7 @@ public:
 	//! @brief The default constructor.
 	Query_Result();
 
+	//! @brief The default destructor
 	~Query_Result();
 
 	//! @brief An accessor for the score.

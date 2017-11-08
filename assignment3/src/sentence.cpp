@@ -45,6 +45,10 @@ int sentence::getParentDocNum() const {
     return parentDocNum;
 }
 
+/*!
+ * First, orders sentences by document number
+ * THen, orders them by their position in the document
+ */
 bool sentence::operator<(const sentence &other) {
     if(this->getParentDocNum() > other.getParentDocNum())
         return false;

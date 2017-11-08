@@ -18,6 +18,7 @@ class sentence : public index_item
         */
         sentence(string s, int p, int docNum);
 
+        //! @brief The default destructor
         ~sentence();
 
         //! @brief An accessor for the sentence's position in a document.
@@ -32,6 +33,11 @@ class sentence : public index_item
         */
         int getParentDocNum() const;
 
+        //! @brief a default < operator
+        /*!
+        * @param other: a sentence to compare *this* to
+        * @return a boolean. Whether other is greater than *this*
+        */
         bool operator<(const sentence & other);
     private:
         //! @brief A private int: the start position (in characters) of the sentence in a particular document.

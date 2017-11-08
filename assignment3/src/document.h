@@ -18,6 +18,8 @@ public:
 	//! @brief A default constructor.
 	document();
 
+
+	//! @brief A default destructor.
 	~document();
 
 	//! @brief Another constructor.

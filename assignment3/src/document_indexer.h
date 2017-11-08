@@ -27,6 +27,12 @@ public:
      */
 	vector<string> getDocumentNames();
 
+
+	//! @brief An operator[] overload.
+	/*!
+	 * @param name: the name of the document to return
+	 * @return the document with filename name
+	 */
 	index_item* operator [](string name);
 
 	//! @brief an operator<< overload

@@ -17,6 +17,7 @@ public:
 	//! @brief A default constructor.
 	stopwords();
 
+	//! @brief A default destructor.
 	~stopwords();
 
 	//! @brief Anoter constructor.

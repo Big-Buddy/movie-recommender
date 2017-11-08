@@ -14,6 +14,7 @@ class sentence_tokenizer : public abstract_tokenizer
         //! @brief A default constructor.
         sentence_tokenizer();
 
+        //! @brief A default destructor.
         ~sentence_tokenizer();
 
         //! @brief A method to break down a string into a set of strings.
