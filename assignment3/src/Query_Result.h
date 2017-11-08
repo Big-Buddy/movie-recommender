@@ -41,8 +41,20 @@ public:
 	 */
 	vector<pair<index_item*,double> > query(indexer & idx,string s);
 
+    //! @brief A function to print information about the documents found in indexer.
+	/*!
+	 * @param idx: the indexer to be used
+	 * @param s: the given query
+	 * @param n: the top-n documents to be returned
+	 * @return the score
+	 */
 	void printDocResults(indexer & idx,string s,int n = 10);
 
+	//! @brief A function to generate an essay from our queried sentences.
+	/*!
+	 * @param wordCount: the maximum number of words for the essay
+	 * @return the score
+	 */
 	string generateEssayFromSentences(int wordCount) const;
 
 };

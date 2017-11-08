@@ -86,6 +86,13 @@ bool sentence_tokenizer::is_end(const char &c)
     return test;
 }
 
+/*!
+ * Tests a string (first) to determine if it is an abbreviation of a word or not.
+ * Three checks are performed:
+ * If the string does not end in "." it is not an abbreviation
+ * If the string following the first string (second) is in lower case then first must be an abbreviation.
+ * If first and second are in uppercase and the length of first is less than or equal to 4 we assume it is an abbreviation of a title.
+ */
 bool sentence_tokenizer::isAbbreviation(const string &first, const string &second)
 {
     bool is_abbreviated = false;

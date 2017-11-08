@@ -122,7 +122,6 @@ int main(){
 
     string newEssay = sentQ.generateEssayFromSentences(numWords);
 
-
     cout << endl << "Here is your ~" << numWords << " word essay." << endl << endl << newEssay << endl;
 
     cout << endl << "Enter anything to exit application" << endl;

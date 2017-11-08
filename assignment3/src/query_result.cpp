@@ -100,6 +100,9 @@ vector<pair<index_item*,double> > Query_Result::query(indexer & idx,string s) {
     return score;
 }
 
+/*!
+ * This function prints the items contained in the index as documents. Printing out the name of the document and its score.
+ */
 void Query_Result::printDocResults(indexer & idx,string s,int n){
     int size = idx.getSize();
     cout << endl << "******* Top scoring documents for the query \"" << s << "\"  *********" <<endl;
@@ -116,6 +119,12 @@ void Query_Result::printDocResults(indexer & idx,string s,int n){
     }
 }
 
+/*!
+ * This function generates an essay from the contents of the score vector<pair>.
+ * The sentences that score contains are evaluated based on their word length to see if they are suitable given the requested number of words.
+ * If successful the sentence is placed in the chosenSentences vector and then sorted by position.
+ * The "essay" is then returned as a string.
+ */
 string Query_Result::generateEssayFromSentences(int wordCount) const {
     string str;
     vector<sentence*> chosenSentences;
