@@ -1,0 +1,13 @@
+-> movie class
+-> index_exception
+-> movie_tokenizer, input: file1 (metadata) file2 (summaries), output: vector<movie>
+	->read and split file1, output: movie(Id, name, release_date) ***description empty*** 
+	->read and split file2, output: map<Id,description>
+	->join the output of both file reads based on Id
+
+->main() of recommender
+	->prepare tokenized movies
+	->index them
+	->prompt user for movie name (case insensitive)
+	->"query" the movie index based on the description of the user's movie
+	->return a list of similar movies (default 5)
