@@ -16,6 +16,8 @@ class movie : public index_item
 
         int get_id();
 
+        string get_name();
+
         void set_content(string c);
 
     private:

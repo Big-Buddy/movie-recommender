@@ -19,6 +19,11 @@ int movie::get_id()
     return id;
 }
 
+string movie::get_name()
+{
+    return name;
+}
+
 void movie::set_content(string c)
 {
     this->content = c;

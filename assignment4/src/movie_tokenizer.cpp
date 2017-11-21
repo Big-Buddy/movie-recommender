@@ -27,15 +27,22 @@ vector<movie> movie_tokenizer::movie_tokenize(string META_DATA_FILE, string DESC
     //begin reading metadata file
     while (getline(metadata_fs,m_line))
     {
-        //tokenize the line based on whitespaces
-        istringstream iss(m_line);
-        vector<string> temp_buffer;
-        copy(istream_iterator<string>(iss),istream_iterator<string>(),back_inserter(temp_buffer));
-        //id @ temp_buffer[0], name @ temp_buffer[2], release date @ temp_buffer[3]
-        //create movie object without its content
-        movie temp_movie(stoi(temp_buffer[0]), temp_buffer[2], temp_buffer[3]);
-        //add it to the movie_collection
-        movie_collection.push_back(temp_movie);
+        if (!m_line.empty())
+        {
+            //tokenize the line based on whitespaces
+            istringstream iss(m_line);
+            vector<string> temp_buffer;
+            string tsv_token;
+            while(getline(iss, tsv_token, '\t'))
+            {
+                temp_buffer.push_back(tsv_token);
+            }
+            //id @ temp_buffer[0], name @ temp_buffer[2], release date @ temp_buffer[3]
+            //create movie object without its content
+            movie temp_movie(stoi(temp_buffer[0]), temp_buffer[2], temp_buffer[3]);
+            //add it to the movie_collection
+            movie_collection.push_back(temp_movie);
+        }
     }
 
     //tokenize the descriptions
@@ -57,6 +64,7 @@ vector<movie> movie_tokenizer::movie_tokenize(string META_DATA_FILE, string DESC
         id_to_description.insert(pair<int,string>(id, description));
     }
 
+    int movie_count = 0;
     //join them based on ID
     //iterate over movie_collection
     //at each iteration look for a match in the map, if it matches add the description to the object
@@ -65,9 +73,10 @@ vector<movie> movie_tokenizer::movie_tokenize(string META_DATA_FILE, string DESC
             it != movie_collection.end();)
         {
             string temp_content;
-            if (id_to_description.find(it->get_id()) != id_to_description.end())
+            auto finder = id_to_description.find(it->get_id());
+            if (finder != id_to_description.end())
             {
-                temp_content = id_to_description[it->get_id()];
+                temp_content = finder->second;
                 it->set_content(temp_content);
                 ++it;
             }
