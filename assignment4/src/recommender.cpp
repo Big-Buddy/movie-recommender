@@ -20,7 +20,7 @@
 
 using namespace std;
 
-int getIntInput(string message, int max = numeric_limits<int>::max(), int min=0);
+int getIntInput(string message, int skipNum, int max, int min=0);
 
 int main() {
     movie_indexer movIdx;
@@ -29,9 +29,7 @@ int main() {
     string metadata = "movie.metadata.tsv";
     string descriptions = "plot_summaries.txt";
 
-    cout << "-----------------------------------------" << endl << endl;
     cout << "Loading the list of movies. This may take a while..." << endl;
-
     movVec = mt.movie_tokenize(metadata, descriptions);
     for(vector<movie>::iterator movIt = movVec.begin(); movIt != movVec.end(); ++movIt){
         &*movIt >> movIdx;
@@ -53,10 +51,10 @@ int main() {
             if (favMovies.size() > 0) {
                 cout << endl << "Which one of these is your favourite?" << endl;
                 for (int i = 0; i < favMovies.size(); ++i) {
-                    cout << "[" << i << "] - " << favMovies[i];
+                    cout << "[" << i << "] - " << *favMovies[i];
                 }
                 cout << endl;
-                int numInput = getIntInput("Please choose...", favMovies.size() - 1);
+                int numInput = getIntInput("Please choose...", -1, favMovies.size() - 1);
                 favMovie = favMovies[numInput];
                 choseAMovie = true;
             } else {
@@ -65,15 +63,16 @@ int main() {
         }
 
         cout << endl << "-----------------------------------------" << endl << endl;
-        cout << "The movie you chose: " << endl << favMovie << endl << endl;
-        int numRecommendations = getIntInput("How many recommendations would you like? (-1 to skip)",
-                                             movIdx.getSize() - 1, 1);
-        cout << endl << "-----------------------------------------" << endl << endl;
 
+        cout << "Computing a recommendations list. This may take a while..." << endl;
         Query_Result movQ;
         movQ.query(movIdx, favMovie->get_content());
 
-        cout << "Computing a recommendations list. This may take a while..." << endl;
+        cout << "The movie you chose: " << endl << *favMovie << endl << endl;
+        int numRecommendations = getIntInput("How many recommendations would you like? (-1 to skip)", -1,
+                                             movIdx.getSize() - 1, 1);
+        cout << endl << "-----------------------------------------" << endl << endl;
+
         vector<index_item *> movieRecommendations;
         if (numRecommendations == -1) {
             movieRecommendations = movQ.getTopNResults();
@@ -86,7 +85,7 @@ int main() {
         for (vector<index_item *>::iterator itemsIt = movieRecommendations.begin();
              itemsIt != movieRecommendations.end(); ++itemsIt) {
             movie *mov = dynamic_cast<movie *>(*itemsIt);
-            cout << mov << endl;
+            cout << *mov << endl;
         }
 
         string continuePlease;
@@ -104,7 +103,7 @@ int main() {
     return 0;
 }
 
-int getIntInput(string message, int max, int min){
+int getIntInput(string message, int skipNum, int max, int min){
     bool isNumberInput = false;
     int input;
     while(!isNumberInput) {
@@ -116,8 +115,8 @@ int getIntInput(string message, int max, int min){
         convertor >> input;
 
         //make sure it's an int
-        if(convertor.fail() || input < min || input > max){
-            cout << "Please enter a valid integer..." << endl << endl;
+        if(convertor.fail() || (input != skipNum && (input < min || input > max))){
+            cout << "Please enter a valid number..." << endl << endl;
         }
         else{
             isNumberInput = true;
