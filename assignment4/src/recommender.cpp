@@ -29,11 +29,13 @@ int main() {
     string metadata = "movie.metadata.tsv";
     string descriptions = "plot_summaries.txt";
 
+    cout << "-----------------------------------------" << endl;
     cout << "Loading the list of movies. This may take a while..." << endl;
     movVec = mt.movie_tokenize(metadata, descriptions);
     for(vector<movie>::iterator movIt = movVec.begin(); movIt != movVec.end(); ++movIt){
         &*movIt >> movIdx;
     }
+    movIdx.normalize();
     cout << "Finished loading!" << endl << endl;
     cout << "-----------------------------------------" << endl << endl;
 

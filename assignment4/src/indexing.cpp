@@ -37,6 +37,8 @@
 //    for(vector<document>::iterator docit = docVec.begin(); docit != docVec.end(); ++docit){
 //        &*docit >> idx;
 //    }
+//    idx.normalize();
+//
 //    //print out the document_indexer for shit n giggles
 //    cout << idx;
 //
