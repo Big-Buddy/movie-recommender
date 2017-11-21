@@ -80,7 +80,6 @@ int main() {
         } else {
             movieRecommendations = movQ.getTopNResults(numRecommendations);
         }
-        cout << "-----------------------------------------" << endl << endl;
         cout << "Here are our recommendations: " << endl;
         for (vector<index_item *>::iterator itemsIt = movieRecommendations.begin();
              itemsIt != movieRecommendations.end(); ++itemsIt) {
