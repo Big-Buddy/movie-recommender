@@ -40,5 +40,8 @@
 //    //print out the document_indexer for shit n giggles
 //    cout << idx;
 //
+//    string temp;
+//    cin >> temp;
+//
 //    return 0;
 //}

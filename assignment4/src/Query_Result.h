@@ -47,9 +47,15 @@ public:
 	 * @param idx: the indexer to be used
 	 * @param s: the given query
 	 * @param n: the top-n documents to be returned
-	 * @return the score
 	 */
 	void printDocResults(document_indexer & idx,string s,int n = 10);
+
+	//! @brief A function to get the top n scores.
+	/*!
+	 * @param n: the top-n scores
+	 * @return a vector of the top-n scores
+	 */
+	vector<index_item*> getTopNResults(int n = 5);
 
 	//! @brief A function to generate an essay from our queried sentences.
 	/*!

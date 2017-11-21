@@ -4,6 +4,8 @@
 #include <string>
 
 #include "index_item.h"
+#include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +21,14 @@ class movie : public index_item
         string get_name();
 
         void set_content(string c);
+
+        //! @brief an operator<< overload
+        /*!
+         * @param os: the outstream which will receive the matrix information
+         * @param mov: the movie from which we take information
+         * @return the outstream with matrix information.
+         */
+        friend ostream & operator <<(ostream & os, movie & mov);
 
     private:
         int id;

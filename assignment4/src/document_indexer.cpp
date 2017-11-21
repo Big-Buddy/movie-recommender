@@ -12,8 +12,7 @@ using namespace std;
 document_indexer::document_indexer():indexer()
 {}
 
-document_indexer::~document_indexer(){
-}
+document_indexer::~document_indexer(){}
 
 /*!
  * Iterates through all items, and returns the document with filename name

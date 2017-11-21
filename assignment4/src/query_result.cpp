@@ -118,6 +118,19 @@ void Query_Result::printDocResults(document_indexer & idx,string s,int n){
 }
 
 /*!
+ * This function gets the top N items in the score.
+ */
+vector<index_item*> Query_Result::getTopNResults(int n){
+    vector<index_item *> results;
+    for(int i=0; i<n; ++i){
+        results.push_back(score[i].first);
+    }
+    return results;
+}
+
+
+
+/*!
  * This function generates an essay from the contents of the score vector<pair>.
  * The sentences that score contains are evaluated based on their word length to see if they are suitable given the requested number of words.
  * If successful the sentence is placed in the chosenSentences vector and then sorted by position.
