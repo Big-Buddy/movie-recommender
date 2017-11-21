@@ -128,6 +128,7 @@ vector<index_item*> Query_Result::getTopNResults(int n, index_item* itemToFilter
             break;
         }
         index_item* item = scoresIt->first;
+        if(itemToFilter == nullptr || item != itemToFilter){
             results.push_back(item);
             ++counter;
         }
