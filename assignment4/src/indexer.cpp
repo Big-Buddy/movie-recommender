@@ -134,8 +134,6 @@ index_item & operator >>(index_item * item, indexer & idx){
 	word_tokenizer t;
 	vector<string> tokens = t.word_tokenize(cont); // changing the content of document into tokens
 
-    string test = item->get_content();
-
 	for(int i=0;i<tokens.size();i++){
 		string s = tokens[i];
 
