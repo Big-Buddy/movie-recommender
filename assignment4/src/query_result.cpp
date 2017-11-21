@@ -120,11 +120,19 @@ void Query_Result::printDocResults(document_indexer & idx,string s,int n){
 /*!
  * This function gets the top N items in the score.
  */
-vector<index_item*> Query_Result::getTopNResults(int n){
+vector<index_item*> Query_Result::getTopNResults(int n, index_item* itemToFilter){
     vector<index_item *> results;
-    for(int i=0; i<n; ++i){
-        results.push_back(score[i].first);
+    int counter = 0;
+    for(vector<pair<index_item*,double> >::iterator scoresIt = score.begin(); scoresIt != score.end(); ++scoresIt){
+        if(counter >= n){
+            break;
+        }
+        index_item* item = scoresIt->first;
+            results.push_back(item);
+            ++counter;
+        }
     }
+
     return results;
 }
 

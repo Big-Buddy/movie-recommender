@@ -42,7 +42,7 @@ int main() {
     do{
         string favMovieName;
         cout << "What is your favourite movie?" << endl;
-        cin >> favMovieName;
+        getline(cin, favMovieName);
         vector<movie *> favMovies = movIdx[favMovieName];
         movie *favMovie;
         bool choseAMovie = false;
@@ -70,16 +70,15 @@ int main() {
         cout << "Finished computations!" << endl;
         cout << endl << "-----------------------------------------" << endl << endl;
 
-        int numRecommendations = getIntInput("How many recommendations would you like? (-1 to skip)", -1,
-                                             movIdx.getSize() - 1, 1);
+        int numRecommendations = getIntInput("How many recommendations would you like? (-1 to skip)", -1, movIdx.getSize() - 1, 1);
+        if (numRecommendations == -1) {
+            numRecommendations = 5;
+        }
         cout << endl << "-----------------------------------------" << endl << endl;
 
         vector<index_item *> movieRecommendations;
-        if (numRecommendations == -1) {
-            movieRecommendations = movQ.getTopNResults();
-        } else {
-            movieRecommendations = movQ.getTopNResults(numRecommendations);
-        }
+        movieRecommendations = movQ.getTopNResults(numRecommendations, favMovie);
+
         cout << "Here are our recommendations: " << endl;
         for (vector<index_item *>::iterator itemsIt = movieRecommendations.begin();
              itemsIt != movieRecommendations.end(); ++itemsIt) {

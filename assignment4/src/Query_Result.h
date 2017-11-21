@@ -55,7 +55,7 @@ public:
 	 * @param n: the top-n scores
 	 * @return a vector of the top-n scores
 	 */
-	vector<index_item*> getTopNResults(int n = 5);
+	vector<index_item*> getTopNResults(int n, index_item* itemToFilter = nullptr);
 
 	//! @brief A function to generate an essay from our queried sentences.
 	/*!
