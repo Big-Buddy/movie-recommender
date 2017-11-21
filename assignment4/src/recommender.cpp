@@ -64,11 +64,12 @@ int main() {
 
         cout << endl << "-----------------------------------------" << endl << endl;
 
-        cout << "Computing a recommendations list. This may take a while..." << endl;
+        cout << "Computing a recommendations list. This may take a while..." << endl << endl;
         Query_Result movQ;
         movQ.query(movIdx, favMovie->get_content());
+        cout << "Finished computations!" << endl;
+        cout << endl << "-----------------------------------------" << endl << endl;
 
-        cout << "The movie you chose: " << endl << *favMovie << endl << endl;
         int numRecommendations = getIntInput("How many recommendations would you like? (-1 to skip)", -1,
                                              movIdx.getSize() - 1, 1);
         cout << endl << "-----------------------------------------" << endl << endl;
@@ -79,7 +80,6 @@ int main() {
         } else {
             movieRecommendations = movQ.getTopNResults(numRecommendations);
         }
-        cout << "Finished computations!" << endl << endl;
         cout << "-----------------------------------------" << endl << endl;
         cout << "Here are our recommendations: " << endl;
         for (vector<index_item *>::iterator itemsIt = movieRecommendations.begin();
