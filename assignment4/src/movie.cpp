@@ -13,3 +13,13 @@ movie::movie(int i, string n, string r_d)
     :id(i),name(n),release_date(r_d)
 {
 }
+
+int movie::get_id()
+{
+    return id;
+}
+
+void movie::set_content(string c)
+{
+    this->content = c;
+}

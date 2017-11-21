@@ -11,6 +11,7 @@ using namespace std;
 
 class movie_tokenizer : public abstract_tokenizer
 {
+
     public:
         movie_tokenizer();
         ~movie_tokenizer();
