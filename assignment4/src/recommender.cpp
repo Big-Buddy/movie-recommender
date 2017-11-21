@@ -51,7 +51,7 @@ int main() {
             if (favMovies.size() > 0) {
                 cout << endl << "Which one of these is your favourite?" << endl;
                 for (int i = 0; i < favMovies.size(); ++i) {
-                    cout << "[" << i << "] - " << *favMovies[i];
+                    cout << "[" << i << "] - " << *favMovies[i] << endl;
                 }
                 cout << endl;
                 int numInput = getIntInput("Please choose...", -1, favMovies.size() - 1);
@@ -98,7 +98,7 @@ int main() {
 
     cout << "Goodbye!" <<endl;
     string stall;
-    getline(cin, stall);
+    cin >> stall;
 
     return 0;
 }
