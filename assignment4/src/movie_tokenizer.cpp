@@ -13,6 +13,12 @@ movie_tokenizer::~movie_tokenizer()
 {
 }
 
+/*!
+ * This function reads all the available data in two files:
+ * The META_DATA_FILE and the DESCRIPTION_FILE
+ * It then associates the data contained in each by a common piece of data between the two: the Movie ID
+ * Then a vector of movies with descriptions is created and returned.
+ */
 vector<movie> movie_tokenizer::movie_tokenize(string META_DATA_FILE, string DESCRIPTION_FILE)
 {
     vector<movie> movie_collection;
