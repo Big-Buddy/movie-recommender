@@ -34,6 +34,10 @@ int main() {
 
     cout << "-----------------------------------------" << endl << endl;
     cout << "Loading the list of movies. This may take a while..." << endl;
+    
+    movVec = mt.movie_tokenize(metadata, descriptions);
+
+    int start_index = clock();
     try{
         movVec = mt.movie_tokenize(metadata, descriptions);
     }catch (runtime_error& ex){
@@ -43,6 +47,8 @@ int main() {
     for(vector<movie>::iterator movIt = movVec.begin(); movIt != movVec.end(); ++movIt){
         &*movIt >> movIdx;
     }
+    int stop_index = clock();
+    cout << "Time for indexing: " << (stop_index - start_index)/double(CLOCKS_PER_SEC)*1000 << endl;
     movIdx.normalize();
     cout << "Finished loading!" << endl << endl;
     cout << "-----------------------------------------" << endl << endl;

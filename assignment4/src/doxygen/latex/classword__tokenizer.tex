@@ -1,0 +1,58 @@
+\hypertarget{classword__tokenizer}{}\section{word\+\_\+tokenizer Class Reference}
+\label{classword__tokenizer}\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+Inheritance diagram for word\+\_\+tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classword__tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classword__tokenizer_a30887805b70d364fb6fde6cdd814c16a}{word\+\_\+tokenizer} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classword__tokenizer_a19a17890aac719ba8cb1459713f5a96e}\label{classword__tokenizer_a19a17890aac719ba8cb1459713f5a96e}} 
+\hyperlink{classword__tokenizer_a19a17890aac719ba8cb1459713f5a96e}{$\sim$word\+\_\+tokenizer} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \hyperlink{classword__tokenizer_a4a77b2c08a636c15935a5c9dbd0d1d4f}{word\+\_\+tokenize} (string s)
+\begin{DoxyCompactList}\small\item\em A method to break down a string into a set of strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classword__tokenizer_a30887805b70d364fb6fde6cdd814c16a}\label{classword__tokenizer_a30887805b70d364fb6fde6cdd814c16a}} 
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{word\+\_\+tokenizer()}{word\_tokenizer()}}
+{\footnotesize\ttfamily word\+\_\+tokenizer\+::word\+\_\+tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+Is necessary for compilation. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classword__tokenizer_a4a77b2c08a636c15935a5c9dbd0d1d4f}\label{classword__tokenizer_a4a77b2c08a636c15935a5c9dbd0d1d4f}} 
+\index{word\+\_\+tokenizer@{word\+\_\+tokenizer}!word\+\_\+tokenize@{word\+\_\+tokenize}}
+\index{word\+\_\+tokenize@{word\+\_\+tokenize}!word\+\_\+tokenizer@{word\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{word\+\_\+tokenize()}{word\_tokenize()}}
+{\footnotesize\ttfamily vector$<$ string $>$ word\+\_\+tokenizer\+::word\+\_\+tokenize (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+A method to break down a string into a set of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to be broken down. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector$<$string$>$\+: the set of strings that make up s, minus whitespaces and punctuation.
+\end{DoxyReturn}
+The word\+\_\+tokenize method takes a string s, and first breaks it into an vector by dividing words by whitespace. It then takes every string in the vector, makes it lowercase and removes any punctuation. (i.\+e. \textquotesingle{}i-\/e.\+F\textquotesingle{} would become \textquotesingle{}ief\textquotesingle{}). It then adds the new string to a new vector. Finally, it returns the new vector of lowercase words with no punctuation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+word\+\_\+tokenizer.\+h\item 
+word\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}

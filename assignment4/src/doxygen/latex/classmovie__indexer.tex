@@ -1,0 +1,80 @@
+\hypertarget{classmovie__indexer}{}\section{movie\+\_\+indexer Class Reference}
+\label{classmovie__indexer}\index{movie\+\_\+indexer@{movie\+\_\+indexer}}
+Inheritance diagram for movie\+\_\+indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmovie__indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmovie__indexer_a24fcbe6f81f28e9007202cd96df5e191}{movie\+\_\+indexer} ()
+\begin{DoxyCompactList}\small\item\em a default constructor. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmovie}{movie} $\ast$ $>$ \hyperlink{classmovie__indexer_a5b7aa1d935689ad1afbcfe2c877d3ae9}{operator\mbox{[}$\,$\mbox{]}} (string name)
+\begin{DoxyCompactList}\small\item\em An operator\mbox{[}\mbox{]} overload. \end{DoxyCompactList}\item 
+\hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classmovie__indexer_aeaadd1ac660403a0f55122c6afea3acc}{operator\mbox{[}$\,$\mbox{]}} (int n)
+\begin{DoxyCompactList}\small\item\em an operator\mbox{[}\mbox{]} overload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmovie__indexer_a24fcbe6f81f28e9007202cd96df5e191}\label{classmovie__indexer_a24fcbe6f81f28e9007202cd96df5e191}} 
+\index{movie\+\_\+indexer@{movie\+\_\+indexer}!movie\+\_\+indexer@{movie\+\_\+indexer}}
+\index{movie\+\_\+indexer@{movie\+\_\+indexer}!movie\+\_\+indexer@{movie\+\_\+indexer}}
+\subsubsection{\texorpdfstring{movie\+\_\+indexer()}{movie\_indexer()}}
+{\footnotesize\ttfamily movie\+\_\+indexer\+::movie\+\_\+indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a default constructor. 
+
+Initializes the indexer\textquotesingle{}s N to 0, normalized to false, and stpw to a stopwords (\char`\"{}stopwords.\+txt\char`\"{}). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmovie__indexer_a5b7aa1d935689ad1afbcfe2c877d3ae9}\label{classmovie__indexer_a5b7aa1d935689ad1afbcfe2c877d3ae9}} 
+\index{movie\+\_\+indexer@{movie\+\_\+indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!movie\+\_\+indexer@{movie\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classmovie}{movie} $\ast$ $>$ movie\+\_\+indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+An operator\mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the movies to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the document with filename name
+\end{DoxyReturn}
+Iterates through all items, and returns the movie with title name \mbox{\Hypertarget{classmovie__indexer_aeaadd1ac660403a0f55122c6afea3acc}\label{classmovie__indexer_aeaadd1ac660403a0f55122c6afea3acc}} 
+\index{movie\+\_\+indexer@{movie\+\_\+indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!movie\+\_\+indexer@{movie\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item} $\ast$ movie\+\_\+indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+an operator\mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an int index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the movie at index n.
+\end{DoxyReturn}
+Gets the indexer\textquotesingle{}s n\textquotesingle{}th document. 
+
+Reimplemented from \hyperlink{classindexer_ae71041fc84d94155473de60e4407d5cc}{indexer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+movie\+\_\+indexer.\+h\item 
+movie\+\_\+indexer.\+cpp\end{DoxyCompactItemize}

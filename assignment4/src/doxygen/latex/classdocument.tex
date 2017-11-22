@@ -1,0 +1,116 @@
+\hypertarget{classdocument}{}\section{document Class Reference}
+\label{classdocument}\index{document@{document}}
+Inheritance diagram for document\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocument}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdocument_af1a85718219b8da6f1befaac0bf87989}{document} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdocument_afff6a78ede7767d8cbc0cb4566ae64da}\label{classdocument_afff6a78ede7767d8cbc0cb4566ae64da}} 
+\hyperlink{classdocument_afff6a78ede7767d8cbc0cb4566ae64da}{$\sim$document} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classdocument_af8e0d4d3a3eeeac31022ebe0e76c5571}{document} (string \hyperlink{classdocument_a19e6fd5bb89537dc566df2eac658e5a6}{name}, int num)
+\begin{DoxyCompactList}\small\item\em Another constructor. \end{DoxyCompactList}\item 
+string \hyperlink{classdocument_a19e6fd5bb89537dc566df2eac658e5a6}{name} () const
+\begin{DoxyCompactList}\small\item\em An accessor for the document\textquotesingle{}s name. \end{DoxyCompactList}\item 
+int \hyperlink{classdocument_ac8755191462341296e2be04db6f8f4e5}{get\+Doc\+Num} () const
+\begin{DoxyCompactList}\small\item\em An accessor for the document\textquotesingle{}s number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classdocument_aafdf2f4ecb817252c0e22f7c072ec5b0}{operator$<$$<$} (ostream \&os, \hyperlink{classdocument}{document} \&d)
+\begin{DoxyCompactList}\small\item\em A friend operator$<$$<$ overload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdocument_af1a85718219b8da6f1befaac0bf87989}\label{classdocument_af1a85718219b8da6f1befaac0bf87989}} 
+\index{document@{document}!document@{document}}
+\index{document@{document}!document@{document}}
+\subsubsection{\texorpdfstring{document()}{document()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily document\+::document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+The default constructor sets the filename and content to \char`\"{}\char`\"{}, and the size to 0 \mbox{\Hypertarget{classdocument_af8e0d4d3a3eeeac31022ebe0e76c5571}\label{classdocument_af8e0d4d3a3eeeac31022ebe0e76c5571}} 
+\index{document@{document}!document@{document}}
+\index{document@{document}!document@{document}}
+\subsubsection{\texorpdfstring{document()}{document()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily document\+::document (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Another constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & filename of the document to be constructed. \\
+\hline
+{\em num} & doc\+Num of the document to be constructed.\\
+\hline
+\end{DoxyParams}
+The constructor takes a string name, and sets the document\textquotesingle{}s name as that string It then creates a filestream with the string name, and reads its contents into the document\textquotesingle{}s content field It then sets the document\textquotesingle{}s size to the size of content 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdocument_ac8755191462341296e2be04db6f8f4e5}\label{classdocument_ac8755191462341296e2be04db6f8f4e5}} 
+\index{document@{document}!get\+Doc\+Num@{get\+Doc\+Num}}
+\index{get\+Doc\+Num@{get\+Doc\+Num}!document@{document}}
+\subsubsection{\texorpdfstring{get\+Doc\+Num()}{getDocNum()}}
+{\footnotesize\ttfamily int document\+::get\+Doc\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An accessor for the document\textquotesingle{}s number. 
+
+\begin{DoxyReturn}{Returns}
+An int\+: doc\+Num of the document.
+\end{DoxyReturn}
+This accessor returns the document\textquotesingle{}s filename \mbox{\Hypertarget{classdocument_a19e6fd5bb89537dc566df2eac658e5a6}\label{classdocument_a19e6fd5bb89537dc566df2eac658e5a6}} 
+\index{document@{document}!name@{name}}
+\index{name@{name}!document@{document}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily string document\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An accessor for the document\textquotesingle{}s name. 
+
+\begin{DoxyReturn}{Returns}
+A string\+: name of the document.
+\end{DoxyReturn}
+This accessor returns the document\textquotesingle{}s filename 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classdocument_aafdf2f4ecb817252c0e22f7c072ec5b0}\label{classdocument_aafdf2f4ecb817252c0e22f7c072ec5b0}} 
+\index{document@{document}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!document@{document}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\hyperlink{classdocument}{document} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+A friend operator$<$$<$ overload. 
+
+Puts document\textquotesingle{}s information into an ostream 
+\begin{DoxyParams}{Parameters}
+{\em os} & the ostream into which we put document information \\
+\hline
+{\em d} & the document which\textquotesingle{}s information we print out \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an ostream\+: the contents of document
+\end{DoxyReturn}
+This method overloads the operator$<$$<$ It reads the file\textquotesingle{}s information into the ostream 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+document.\+h\item 
+document.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,123 @@
+\hypertarget{classdocument__indexer}{}\section{document\+\_\+indexer Class Reference}
+\label{classdocument__indexer}\index{document\+\_\+indexer@{document\+\_\+indexer}}
+Inheritance diagram for document\+\_\+indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdocument__indexer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}{document\+\_\+indexer} ()
+\begin{DoxyCompactList}\small\item\em a default constructor. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \hyperlink{classdocument__indexer_a885c965f69ed1fcef8b4670d48182045}{get\+Document\+Names} ()
+\begin{DoxyCompactList}\small\item\em gets the documents names \end{DoxyCompactList}\item 
+\hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classdocument__indexer_a2f17781feae3360c3900190b69709f0d}{operator\mbox{[}$\,$\mbox{]}} (string name)
+\begin{DoxyCompactList}\small\item\em An operator\mbox{[}\mbox{]} overload. \end{DoxyCompactList}\item 
+\hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classdocument__indexer_ab6573986790793c03f05192a526d217d}{operator\mbox{[}$\,$\mbox{]}} (int n)
+\begin{DoxyCompactList}\small\item\em an operator\mbox{[}\mbox{]} overload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classdocument__indexer_aa4cd3fa3dc189d5e7dc4b07ed98958e8}{operator$<$$<$} (ostream \&os, \hyperlink{classdocument__indexer}{document\+\_\+indexer} \&idx)
+\begin{DoxyCompactList}\small\item\em an operator$<$$<$ overload \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}\label{classdocument__indexer_a569b5a1dc381efce6ab2ab64644a7662}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!document\+\_\+indexer@{document\+\_\+indexer}}
+\index{document\+\_\+indexer@{document\+\_\+indexer}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{document\+\_\+indexer()}{document\_indexer()}}
+{\footnotesize\ttfamily document\+\_\+indexer\+::document\+\_\+indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a default constructor. 
+
+Initializes the indexer\textquotesingle{}s N to 0, normalized to false, and stpw to a stopwords (\char`\"{}stopwords.\+txt\char`\"{}). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdocument__indexer_a885c965f69ed1fcef8b4670d48182045}\label{classdocument__indexer_a885c965f69ed1fcef8b4670d48182045}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!get\+Document\+Names@{get\+Document\+Names}}
+\index{get\+Document\+Names@{get\+Document\+Names}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{get\+Document\+Names()}{getDocumentNames()}}
+{\footnotesize\ttfamily vector$<$ string $>$ document\+\_\+indexer\+::get\+Document\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the documents names 
+
+\begin{DoxyReturn}{Returns}
+the names of the documents in indexer
+\end{DoxyReturn}
+Iterates through all documents, and returns a vector of all names. \mbox{\Hypertarget{classdocument__indexer_a2f17781feae3360c3900190b69709f0d}\label{classdocument__indexer_a2f17781feae3360c3900190b69709f0d}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item} $\ast$ document\+\_\+indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+An operator\mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the document to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the document with filename name
+\end{DoxyReturn}
+Iterates through all items, and returns the document with filename name \mbox{\Hypertarget{classdocument__indexer_ab6573986790793c03f05192a526d217d}\label{classdocument__indexer_ab6573986790793c03f05192a526d217d}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item} $\ast$ document\+\_\+indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+an operator\mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an int index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the document at index n.
+\end{DoxyReturn}
+Gets the indexer\textquotesingle{}s n\textquotesingle{}th document. 
+
+Reimplemented from \hyperlink{classindexer_ae71041fc84d94155473de60e4407d5cc}{indexer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classdocument__indexer_aa4cd3fa3dc189d5e7dc4b07ed98958e8}\label{classdocument__indexer_aa4cd3fa3dc189d5e7dc4b07ed98958e8}} 
+\index{document\+\_\+indexer@{document\+\_\+indexer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!document\+\_\+indexer@{document\+\_\+indexer}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\hyperlink{classdocument__indexer}{document\+\_\+indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+an operator$<$$<$ overload 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & the outstream which will receive the matrix information \\
+\hline
+{\em idx} & the indexer from which we take information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the outstream with matrix information.
+\end{DoxyReturn}
+Fills an outstream with the document matrices information (term frequency, weight etc.) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+document\+\_\+indexer.\+h\item 
+document\+\_\+indexer.\+cpp\end{DoxyCompactItemize}
