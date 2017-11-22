@@ -12,12 +12,19 @@ movie_indexer::~movie_indexer() {}
  */
 vector<movie*> movie_indexer::operator [](string name){
     vector<movie*> movVec;
-    for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
-        movie *mov = dynamic_cast<movie*>(*itemsIt);
-        if(mov->get_name().find(name) != string::npos){
-            movVec.push_back(mov);
+    try {
+        for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
+            movie *mov = dynamic_cast<movie*>(*itemsIt);
+            if(mov->get_name().find(name) != string::npos){
+                movVec.push_back(mov);
+            }
         }
+    }catch (std::out_of_range ex){
+        cout<< ex.what() << endl;
+        exit(1);
     }
+
+
     return movVec;
 }
 

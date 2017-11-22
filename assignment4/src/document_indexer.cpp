@@ -18,12 +18,19 @@ document_indexer::~document_indexer(){}
  * Iterates through all items, and returns the document with filename name
  */
 index_item* document_indexer::operator [](string name){
-    for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
-        document *doc = dynamic_cast<document*>(*itemsIt);
-        if(doc->name() == name){
-            return doc;
+    try {
+        for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
+            document *doc = dynamic_cast<document*>(*itemsIt);
+            if(doc->name() == name){
+                return doc;
+            }
         }
+    }catch (std::out_of_range ex){
+        cout<< ex.what() << endl;
+        exit(1);
     }
+
+
 }
 
 /*!
