@@ -1,0 +1,69 @@
+\hypertarget{classstopwords}{}\section{stopwords Class Reference}
+\label{classstopwords}\index{stopwords@{stopwords}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstopwords_ae07cdf9173446ac3ff166c26ba7f05d4}{stopwords} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classstopwords_acc1fd23d272a96a69860f185360df992}\label{classstopwords_acc1fd23d272a96a69860f185360df992}} 
+\hyperlink{classstopwords_acc1fd23d272a96a69860f185360df992}{$\sim$stopwords} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classstopwords_a726865f116a88b84c2239e80a1fb872a}{stopwords} (string filename)
+\begin{DoxyCompactList}\small\item\em Anoter constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classstopwords_a7e237ef49803d27b80d5efcca17f53b3}{operator()} (string word)
+\begin{DoxyCompactList}\small\item\em an operator() overlead. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstopwords_ae07cdf9173446ac3ff166c26ba7f05d4}\label{classstopwords_ae07cdf9173446ac3ff166c26ba7f05d4}} 
+\index{stopwords@{stopwords}!stopwords@{stopwords}}
+\index{stopwords@{stopwords}!stopwords@{stopwords}}
+\subsubsection{\texorpdfstring{stopwords()}{stopwords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily stopwords\+::stopwords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+The default constructor does nothing in this case, since we have no use for an empty stopwords object. \mbox{\Hypertarget{classstopwords_a726865f116a88b84c2239e80a1fb872a}\label{classstopwords_a726865f116a88b84c2239e80a1fb872a}} 
+\index{stopwords@{stopwords}!stopwords@{stopwords}}
+\index{stopwords@{stopwords}!stopwords@{stopwords}}
+\subsubsection{\texorpdfstring{stopwords()}{stopwords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily stopwords\+::stopwords (\begin{DoxyParamCaption}\item[{string}]{fname }\end{DoxyParamCaption})}
+
+
+
+Anoter constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the filename of the stopwords to be constructed.\\
+\hline
+\end{DoxyParams}
+The other constructor takes a string fname and sets it as its filename. It then creates a filestream from the filename, and reads every word in the filestream into the stopword vector. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstopwords_a7e237ef49803d27b80d5efcca17f53b3}\label{classstopwords_a7e237ef49803d27b80d5efcca17f53b3}} 
+\index{stopwords@{stopwords}!operator()@{operator()}}
+\index{operator()@{operator()}!stopwords@{stopwords}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool stopwords\+::operator() (\begin{DoxyParamCaption}\item[{string}]{word }\end{DoxyParamCaption})}
+
+
+
+an operator() overlead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & the work to check if it is a stopword or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean\+: whether or not the word input is a stopword.
+\end{DoxyReturn}
+The overloaded operator() takes a word, and returns true if the work is in the stopword vector. Else, it returns false; 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+stopwords.\+h\item 
+stopwords.\+cpp\end{DoxyCompactItemize}

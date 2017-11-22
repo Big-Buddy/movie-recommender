@@ -1,0 +1,137 @@
+\hypertarget{class_query___result}{}\section{Query\+\_\+\+Result Class Reference}
+\label{class_query___result}\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_query___result_aca6caea4d2be58145212fc22c56a5fab}{Query\+\_\+\+Result} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_query___result_a12b2802d889af86623d0b1b646ca6854}\label{class_query___result_a12b2802d889af86623d0b1b646ca6854}} 
+\hyperlink{class_query___result_a12b2802d889af86623d0b1b646ca6854}{$\sim$\+Query\+\_\+\+Result} ()
+\begin{DoxyCompactList}\small\item\em The default destructor. \end{DoxyCompactList}\item 
+const vector$<$ pair$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, double $>$ $>$ \& \hyperlink{class_query___result_a4ef5504013529a3b61b1d064ad75b348}{scorevector} ()
+\begin{DoxyCompactList}\small\item\em An accessor for the score. \end{DoxyCompactList}\item 
+void \hyperlink{class_query___result_a444ded4e65dab7222256ed6591ff78d9}{query} (\hyperlink{classindexer}{indexer} \&idx, string s)
+\begin{DoxyCompactList}\small\item\em A function to apply a query and return a result. \end{DoxyCompactList}\item 
+void \hyperlink{class_query___result_a5a3054d05f8768e724886d3cae6970c1}{print\+Doc\+Results} (\hyperlink{classdocument__indexer}{document\+\_\+indexer} \&idx, string s, int n=10)
+\begin{DoxyCompactList}\small\item\em A function to print information about the documents found in indexer. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ \hyperlink{class_query___result_a05014e96b4883c7ca78c7bd3b2e457d8}{get\+Top\+N\+Results} (int n, \hyperlink{classindex__item}{index\+\_\+item} $\ast$item\+To\+Filter=nullptr)
+\begin{DoxyCompactList}\small\item\em A function to get the top n scores. \end{DoxyCompactList}\item 
+string \hyperlink{class_query___result_a4729716b1a3d34c761a56d4d96ff906f}{generate\+Essay\+From\+Sentences} (int word\+Count) const
+\begin{DoxyCompactList}\small\item\em A function to generate an essay from our queried sentences. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_query___result_aca6caea4d2be58145212fc22c56a5fab}\label{class_query___result_aca6caea4d2be58145212fc22c56a5fab}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{Query\+\_\+\+Result()}{Query\_Result()}}
+{\footnotesize\ttfamily Query\+\_\+\+Result\+::\+Query\+\_\+\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor. 
+
+Is necessary for compilation. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_query___result_a4729716b1a3d34c761a56d4d96ff906f}\label{class_query___result_a4729716b1a3d34c761a56d4d96ff906f}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!generate\+Essay\+From\+Sentences@{generate\+Essay\+From\+Sentences}}
+\index{generate\+Essay\+From\+Sentences@{generate\+Essay\+From\+Sentences}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{generate\+Essay\+From\+Sentences()}{generateEssayFromSentences()}}
+{\footnotesize\ttfamily string Query\+\_\+\+Result\+::generate\+Essay\+From\+Sentences (\begin{DoxyParamCaption}\item[{int}]{word\+Count }\end{DoxyParamCaption}) const}
+
+
+
+A function to generate an essay from our queried sentences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word\+Count} & the maximum number of words for the essay \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the score
+\end{DoxyReturn}
+This function generates an essay from the contents of the score vector$<$pair$>$. The sentences that score contains are evaluated based on their word length to see if they are suitable given the requested number of words. If successful the sentence is placed in the chosen\+Sentences vector and then sorted by position. The \char`\"{}essay\char`\"{} is then returned as a string. \mbox{\Hypertarget{class_query___result_a05014e96b4883c7ca78c7bd3b2e457d8}\label{class_query___result_a05014e96b4883c7ca78c7bd3b2e457d8}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!get\+Top\+N\+Results@{get\+Top\+N\+Results}}
+\index{get\+Top\+N\+Results@{get\+Top\+N\+Results}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{get\+Top\+N\+Results()}{getTopNResults()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ Query\+\_\+\+Result\+::get\+Top\+N\+Results (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{\hyperlink{classindex__item}{index\+\_\+item} $\ast$}]{item\+To\+Filter = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+A function to get the top n scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the top-\/n scores \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of the top-\/n scores
+\end{DoxyReturn}
+This function gets the top N items in the score. \mbox{\Hypertarget{class_query___result_a5a3054d05f8768e724886d3cae6970c1}\label{class_query___result_a5a3054d05f8768e724886d3cae6970c1}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!print\+Doc\+Results@{print\+Doc\+Results}}
+\index{print\+Doc\+Results@{print\+Doc\+Results}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{print\+Doc\+Results()}{printDocResults()}}
+{\footnotesize\ttfamily void Query\+\_\+\+Result\+::print\+Doc\+Results (\begin{DoxyParamCaption}\item[{\hyperlink{classdocument__indexer}{document\+\_\+indexer} \&}]{idx,  }\item[{string}]{s,  }\item[{int}]{n = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+A function to print information about the documents found in indexer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & the indexer to be used \\
+\hline
+{\em s} & the given query \\
+\hline
+{\em n} & the top-\/n documents to be returned\\
+\hline
+\end{DoxyParams}
+This function prints the items contained in the index as documents. Printing out the name of the document and its score. \mbox{\Hypertarget{class_query___result_a444ded4e65dab7222256ed6591ff78d9}\label{class_query___result_a444ded4e65dab7222256ed6591ff78d9}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!query@{query}}
+\index{query@{query}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily void Query\+\_\+\+Result\+::query (\begin{DoxyParamCaption}\item[{\hyperlink{classindexer}{indexer} \&}]{idx,  }\item[{string}]{s }\end{DoxyParamCaption})}
+
+
+
+A function to apply a query and return a result. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em size} & the size of indexer. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & The indexer on which the query will be applied \\
+\hline
+{\em s} & A string that is to be searched for in the indexer. \\
+\hline
+{\em n} & an optional int to delimit the amount of results printed out, default is 10. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the score
+\end{DoxyReturn}
+This function first checks if the indexer is normalized. If it is not, throw an error. It then goes through every document in the indexer, and calculates the weights per document. Using the weights, it calculates every document\textquotesingle{}s score. It the prints out the n top scores, and returns all scores. \mbox{\Hypertarget{class_query___result_a4ef5504013529a3b61b1d064ad75b348}\label{class_query___result_a4ef5504013529a3b61b1d064ad75b348}} 
+\index{Query\+\_\+\+Result@{Query\+\_\+\+Result}!scorevector@{scorevector}}
+\index{scorevector@{scorevector}!Query\+\_\+\+Result@{Query\+\_\+\+Result}}
+\subsubsection{\texorpdfstring{scorevector()}{scorevector()}}
+{\footnotesize\ttfamily const vector$<$ pair$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, double $>$ $>$ \& Query\+\_\+\+Result\+::scorevector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+An accessor for the score. 
+
+\begin{DoxyReturn}{Returns}
+The score of the query result. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Query\+\_\+\+Result.\+h\item 
+query\+\_\+result.\+cpp\end{DoxyCompactItemize}

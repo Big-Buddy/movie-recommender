@@ -1,0 +1,45 @@
+\hypertarget{classmovie__tokenizer}{}\section{movie\+\_\+tokenizer Class Reference}
+\label{classmovie__tokenizer}\index{movie\+\_\+tokenizer@{movie\+\_\+tokenizer}}
+Inheritance diagram for movie\+\_\+tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmovie__tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmovie__tokenizer_af30c3fa452d1d99cb97d236494a5ea0c}\label{classmovie__tokenizer_af30c3fa452d1d99cb97d236494a5ea0c}} 
+\hyperlink{classmovie__tokenizer_af30c3fa452d1d99cb97d236494a5ea0c}{movie\+\_\+tokenizer} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmovie}{movie} $>$ \hyperlink{classmovie__tokenizer_a84002e6539255bfb4da76f0c86238c36}{movie\+\_\+tokenize} (string M\+E\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE, string D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N\+\_\+\+F\+I\+LE)
+\begin{DoxyCompactList}\small\item\em Reads two files and returns a vector of movies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmovie__tokenizer_a84002e6539255bfb4da76f0c86238c36}\label{classmovie__tokenizer_a84002e6539255bfb4da76f0c86238c36}} 
+\index{movie\+\_\+tokenizer@{movie\+\_\+tokenizer}!movie\+\_\+tokenize@{movie\+\_\+tokenize}}
+\index{movie\+\_\+tokenize@{movie\+\_\+tokenize}!movie\+\_\+tokenizer@{movie\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{movie\+\_\+tokenize()}{movie\_tokenize()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classmovie}{movie} $>$ movie\+\_\+tokenizer\+::movie\+\_\+tokenize (\begin{DoxyParamCaption}\item[{string}]{M\+E\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE,  }\item[{string}]{D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N\+\_\+\+F\+I\+LE }\end{DoxyParamCaption})}
+
+
+
+Reads two files and returns a vector of movies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M\+E\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE} & The filename of the file containing the movie meta data. \\
+\hline
+{\em D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N\+\_\+\+F\+I\+LE} & The filename of the file containing the movie descriptions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All the movies that have descriptions in the the files.
+\end{DoxyReturn}
+This function reads all the available data in two files\+: The M\+E\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE and the D\+E\+S\+C\+R\+I\+P\+T\+I\+O\+N\+\_\+\+F\+I\+LE It then associates the data contained in each by a common piece of data between the two\+: the Movie ID Then a vector of movies with descriptions is created and returned. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+movie\+\_\+tokenizer.\+h\item 
+movie\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}

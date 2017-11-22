@@ -1,0 +1,289 @@
+\hypertarget{classindexer}{}\section{indexer Class Reference}
+\label{classindexer}\index{indexer@{indexer}}
+Inheritance diagram for indexer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classindexer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindexer_aeadc68a96ef7492b4d320eaf470fb5f6}\label{classindexer_aeadc68a96ef7492b4d320eaf470fb5f6}} 
+enum \hyperlink{classindexer_aeadc68a96ef7492b4d320eaf470fb5f6}{Exceptions} \{ {\bfseries I\+N\+D\+E\+X\+\_\+\+N\+O\+T\+\_\+\+N\+O\+R\+M\+A\+L\+I\+Z\+ED}
+ \}\begin{DoxyCompactList}\small\item\em an exception to be thrown when attemptin to query an un-\/normalized indexer. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindexer_acbbcbad080a7ae43ed78840fcf006960}{indexer} ()
+\begin{DoxyCompactList}\small\item\em a default constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classindexer_ad9e5eee599f4677d7a6cca2f53aeec44}{get\+Size} ()
+\begin{DoxyCompactList}\small\item\em an accessor for size. \end{DoxyCompactList}\item 
+bool \hyperlink{classindexer_a48c05d99699e2191d606936b35ecbb0d}{is\+Normalize} ()
+\begin{DoxyCompactList}\small\item\em an accessor for normalize. \end{DoxyCompactList}\item 
+\hyperlink{classstopwords}{stopwords} $\ast$ \hyperlink{classindexer_a78be8aabef768ba82208956e53316cc5}{getstpw} ()
+\begin{DoxyCompactList}\small\item\em an accessor for stpw. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ \& \hyperlink{classindexer_ad576259a08d87b8d4486793522a0ca5a}{get\+Items} ()
+\begin{DoxyCompactList}\small\item\em an accessor for documents. \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \& \hyperlink{classindexer_a99c8633ff92270ecbe76a5c9cf57e2e0}{get\+Dft} ()
+\begin{DoxyCompactList}\small\item\em an accessor for dft. \end{DoxyCompactList}\item 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \& \hyperlink{classindexer_ad2afffef1c97feb0c7934951ce35319c}{get\+T\+Ftd1} ()
+\begin{DoxyCompactList}\small\item\em an accessor for tftd1. \end{DoxyCompactList}\item 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \& \hyperlink{classindexer_ab819d6ad0ae7fb00254a5d41f4cc92cd}{get\+T\+Ftd2} ()
+\begin{DoxyCompactList}\small\item\em an accessor for tftd2. \end{DoxyCompactList}\item 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, double $>$ $>$ \& \hyperlink{classindexer_a8c9a0dadc14a83bdfa36c8b7555cbc6c}{get\+Wtd} ()
+\begin{DoxyCompactList}\small\item\em an accessor for wtd. \end{DoxyCompactList}\item 
+map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \& \hyperlink{classindexer_a8886ee24d98c5129a6582a95f65e31f6}{get\+Total1} ()
+\begin{DoxyCompactList}\small\item\em an accessor for total1. \end{DoxyCompactList}\item 
+map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \& \hyperlink{classindexer_a8717246599f696d38d2b7051071b8957}{get\+Total2} ()
+\begin{DoxyCompactList}\small\item\em an accessor for total2. \end{DoxyCompactList}\item 
+void \hyperlink{classindexer_afd19e249c5224de7b4b308c5420f2412}{normalize} ()
+\begin{DoxyCompactList}\small\item\em a function which normalizes the indexer. \end{DoxyCompactList}\item 
+virtual \hyperlink{classindex__item}{index\+\_\+item} $\ast$ \hyperlink{classindexer_ae71041fc84d94155473de60e4407d5cc}{operator\mbox{[}$\,$\mbox{]}} (int n)
+\begin{DoxyCompactList}\small\item\em an operator\mbox{[}\mbox{]} overload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classindexer_a0742c29a845289118c3f4b75653be72c}\label{classindexer_a0742c29a845289118c3f4b75653be72c}} 
+int \hyperlink{classindexer_a0742c29a845289118c3f4b75653be72c}{N}
+\begin{DoxyCompactList}\small\item\em A private int\+: the number of index items. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a8c6e10131bfdffba3d221076176a16c7}\label{classindexer_a8c6e10131bfdffba3d221076176a16c7}} 
+bool \hyperlink{classindexer_a8c6e10131bfdffba3d221076176a16c7}{normalized}
+\begin{DoxyCompactList}\small\item\em a private boolean\+: whether the indexer has been normalized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a627b020657c54f3c2ba35953311bf2b2}\label{classindexer_a627b020657c54f3c2ba35953311bf2b2}} 
+\hyperlink{classstopwords}{stopwords} $\ast$ \hyperlink{classindexer_a627b020657c54f3c2ba35953311bf2b2}{stpw}
+\begin{DoxyCompactList}\small\item\em a private stopwords\+: the stopwords the indexer should keep track of. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a3b00610add9f8f127eb1c1a22e8d7886}\label{classindexer_a3b00610add9f8f127eb1c1a22e8d7886}} 
+vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ \hyperlink{classindexer_a3b00610add9f8f127eb1c1a22e8d7886}{items}
+\begin{DoxyCompactList}\small\item\em a private vector of documents\+: the list of documents which\textquotesingle{}s score the indexer should keep. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a4de4c0d5adaa7b61ccd81e83ecef5de0}\label{classindexer_a4de4c0d5adaa7b61ccd81e83ecef5de0}} 
+map$<$ string, int $>$ \hyperlink{classindexer_a4de4c0d5adaa7b61ccd81e83ecef5de0}{dft}
+\begin{DoxyCompactList}\small\item\em a private map of string, int\+: the total number of documents that a token appears in. (Document Frequency) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a0139107164efd7e1d8ee95680a8f623e}\label{classindexer_a0139107164efd7e1d8ee95680a8f623e}} 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \hyperlink{classindexer_a0139107164efd7e1d8ee95680a8f623e}{tftd1}
+\begin{DoxyCompactList}\small\item\em a private map of string, pair$<$string, int$>$ vector\+: the token frequency in documents. The pair is document name -\/ weight in that document \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a1ff1c5347d49058577a4426c566fa869}\label{classindexer_a1ff1c5347d49058577a4426c566fa869}} 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \hyperlink{classindexer_a1ff1c5347d49058577a4426c566fa869}{tftd2}
+\begin{DoxyCompactList}\small\item\em a private map of string, pair$<$string, int$>$ vector\+: The same as tftd1, but with stopwords removed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a74d1cf4b9a28f2772334d2abadab014d}\label{classindexer_a74d1cf4b9a28f2772334d2abadab014d}} 
+map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, double $>$ $>$ \hyperlink{classindexer_a74d1cf4b9a28f2772334d2abadab014d}{wtd}
+\begin{DoxyCompactList}\small\item\em a private map of string, pair$<$string, double$>$ vector\+: the weight of each token in each document, stored similarly to tftd1 but for weight instead of frequency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_aa8fe5fc7623db3c099e9d1604ffa09bb}\label{classindexer_aa8fe5fc7623db3c099e9d1604ffa09bb}} 
+map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \hyperlink{classindexer_aa8fe5fc7623db3c099e9d1604ffa09bb}{total1}
+\begin{DoxyCompactList}\small\item\em a private pair vector\+: the total number of words per document, stored similarly to the weight in tftd1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classindexer_a5b4ef5367c4d3f0f35b96c180c67e989}\label{classindexer_a5b4ef5367c4d3f0f35b96c180c67e989}} 
+map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \hyperlink{classindexer_a5b4ef5367c4d3f0f35b96c180c67e989}{total2}
+\begin{DoxyCompactList}\small\item\em a private pair vector\+: the same as total1, but without stopwords. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindex__item}{index\+\_\+item} \& \hyperlink{classindexer_af6526a689e8ed16f67708180a988b8d8}{operator$>$$>$} (\hyperlink{classindex__item}{index\+\_\+item} $\ast$d, \hyperlink{classindexer}{indexer} \&idx)
+\begin{DoxyCompactList}\small\item\em an operator$>$$>$ overload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classindexer_acbbcbad080a7ae43ed78840fcf006960}\label{classindexer_acbbcbad080a7ae43ed78840fcf006960}} 
+\index{indexer@{indexer}!indexer@{indexer}}
+\index{indexer@{indexer}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{indexer()}{indexer()}}
+{\footnotesize\ttfamily indexer\+::indexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a default constructor. 
+
+Initializes the indexer\textquotesingle{}s N to 0, normalized to false, and stpw to a stopwords (\char`\"{}stopwords.\+txt\char`\"{}). 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classindexer_a99c8633ff92270ecbe76a5c9cf57e2e0}\label{classindexer_a99c8633ff92270ecbe76a5c9cf57e2e0}} 
+\index{indexer@{indexer}!get\+Dft@{get\+Dft}}
+\index{get\+Dft@{get\+Dft}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Dft()}{getDft()}}
+{\footnotesize\ttfamily map$<$ string, int $>$ \& indexer\+::get\+Dft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for dft. 
+
+\begin{DoxyReturn}{Returns}
+the dft of indexer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_ad576259a08d87b8d4486793522a0ca5a}\label{classindexer_ad576259a08d87b8d4486793522a0ca5a}} 
+\index{indexer@{indexer}!get\+Items@{get\+Items}}
+\index{get\+Items@{get\+Items}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Items()}{getItems()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$ $>$ \& indexer\+::get\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for documents. 
+
+\begin{DoxyReturn}{Returns}
+the documents in indexer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_ad9e5eee599f4677d7a6cca2f53aeec44}\label{classindexer_ad9e5eee599f4677d7a6cca2f53aeec44}} 
+\index{indexer@{indexer}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily int indexer\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for size. 
+
+\begin{DoxyReturn}{Returns}
+the size of the indexer.
+\end{DoxyReturn}
+a function to return the size of the indexer \mbox{\Hypertarget{classindexer_a78be8aabef768ba82208956e53316cc5}\label{classindexer_a78be8aabef768ba82208956e53316cc5}} 
+\index{indexer@{indexer}!getstpw@{getstpw}}
+\index{getstpw@{getstpw}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{getstpw()}{getstpw()}}
+{\footnotesize\ttfamily \hyperlink{classstopwords}{stopwords} $\ast$ indexer\+::getstpw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for stpw. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s stopwords. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_ad2afffef1c97feb0c7934951ce35319c}\label{classindexer_ad2afffef1c97feb0c7934951ce35319c}} 
+\index{indexer@{indexer}!get\+T\+Ftd1@{get\+T\+Ftd1}}
+\index{get\+T\+Ftd1@{get\+T\+Ftd1}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+T\+Ftd1()}{getTFtd1()}}
+{\footnotesize\ttfamily map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \& indexer\+::get\+T\+Ftd1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for tftd1. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s tftd1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_ab819d6ad0ae7fb00254a5d41f4cc92cd}\label{classindexer_ab819d6ad0ae7fb00254a5d41f4cc92cd}} 
+\index{indexer@{indexer}!get\+T\+Ftd2@{get\+T\+Ftd2}}
+\index{get\+T\+Ftd2@{get\+T\+Ftd2}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+T\+Ftd2()}{getTFtd2()}}
+{\footnotesize\ttfamily map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ $>$ \& indexer\+::get\+T\+Ftd2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for tftd2. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s tftd2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_a8886ee24d98c5129a6582a95f65e31f6}\label{classindexer_a8886ee24d98c5129a6582a95f65e31f6}} 
+\index{indexer@{indexer}!get\+Total1@{get\+Total1}}
+\index{get\+Total1@{get\+Total1}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Total1()}{getTotal1()}}
+{\footnotesize\ttfamily map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \& indexer\+::get\+Total1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for total1. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s total1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_a8717246599f696d38d2b7051071b8957}\label{classindexer_a8717246599f696d38d2b7051071b8957}} 
+\index{indexer@{indexer}!get\+Total2@{get\+Total2}}
+\index{get\+Total2@{get\+Total2}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Total2()}{getTotal2()}}
+{\footnotesize\ttfamily map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, int $>$ \& indexer\+::get\+Total2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for total2. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s total2. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_a8c9a0dadc14a83bdfa36c8b7555cbc6c}\label{classindexer_a8c9a0dadc14a83bdfa36c8b7555cbc6c}} 
+\index{indexer@{indexer}!get\+Wtd@{get\+Wtd}}
+\index{get\+Wtd@{get\+Wtd}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{get\+Wtd()}{getWtd()}}
+{\footnotesize\ttfamily map$<$ string, map$<$ \hyperlink{classindex__item}{index\+\_\+item} $\ast$, double $>$ $>$ \& indexer\+::get\+Wtd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for wtd. 
+
+\begin{DoxyReturn}{Returns}
+the indexer\textquotesingle{}s wtd. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classindexer_a48c05d99699e2191d606936b35ecbb0d}\label{classindexer_a48c05d99699e2191d606936b35ecbb0d}} 
+\index{indexer@{indexer}!is\+Normalize@{is\+Normalize}}
+\index{is\+Normalize@{is\+Normalize}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{is\+Normalize()}{isNormalize()}}
+{\footnotesize\ttfamily bool indexer\+::is\+Normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+an accessor for normalize. 
+
+\begin{DoxyReturn}{Returns}
+if the indexer is normalized.
+\end{DoxyReturn}
+Checks if the indexer is normalized \mbox{\Hypertarget{classindexer_afd19e249c5224de7b4b308c5420f2412}\label{classindexer_afd19e249c5224de7b4b308c5420f2412}} 
+\index{indexer@{indexer}!normalize@{normalize}}
+\index{normalize@{normalize}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void indexer\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a function which normalizes the indexer. 
+
+Calculates the frequency of a token (how many documents it appears in). Then, calculates the weight of a token in each document. \mbox{\Hypertarget{classindexer_ae71041fc84d94155473de60e4407d5cc}\label{classindexer_ae71041fc84d94155473de60e4407d5cc}} 
+\index{indexer@{indexer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item} $\ast$ indexer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+an operator\mbox{[}\mbox{]} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an int index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the document at index n.
+\end{DoxyReturn}
+Gets the indexer\textquotesingle{}s n\textquotesingle{}th document. 
+
+Reimplemented in \hyperlink{classdocument__indexer_ab6573986790793c03f05192a526d217d}{document\+\_\+indexer}, and \hyperlink{classmovie__indexer_aeaadd1ac660403a0f55122c6afea3acc}{movie\+\_\+indexer}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classindexer_af6526a689e8ed16f67708180a988b8d8}\label{classindexer_af6526a689e8ed16f67708180a988b8d8}} 
+\index{indexer@{indexer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!indexer@{indexer}}
+\subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \hyperlink{classindex__item}{index\+\_\+item}\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{\hyperlink{classindex__item}{index\+\_\+item} $\ast$}]{d,  }\item[{\hyperlink{classindexer}{indexer} \&}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+an operator$>$$>$ overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & the document to add to the indexer. \\
+\hline
+{\em idx} & the indexer to which we are adding a document. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the document d.
+\end{DoxyReturn}
+Adds a new document to the indexer, then calculates term frequency for that document and normalizes the indexer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+indexer.\+h\item 
+indexer.\+cpp\end{DoxyCompactItemize}

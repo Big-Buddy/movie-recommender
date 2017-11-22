@@ -1,0 +1,110 @@
+\hypertarget{classsentence}{}\section{sentence Class Reference}
+\label{classsentence}\index{sentence@{sentence}}
+Inheritance diagram for sentence\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsentence_a458e5abe0d27f8972771153e72667673}{sentence} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsentence_a39e99adb96c8de8aeff00c0657248f9e}{sentence} (string s, int p, int doc\+Num)
+\begin{DoxyCompactList}\small\item\em Another constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsentence_affdf5776454bd6796aac043ff8b9630e}\label{classsentence_affdf5776454bd6796aac043ff8b9630e}} 
+\hyperlink{classsentence_affdf5776454bd6796aac043ff8b9630e}{$\sim$sentence} ()
+\begin{DoxyCompactList}\small\item\em The default destructor. \end{DoxyCompactList}\item 
+int \hyperlink{classsentence_ad4786351fceabfd06ca10b7766d516b3}{get\+Pos} () const
+\begin{DoxyCompactList}\small\item\em An accessor for the sentence\textquotesingle{}s position in a document. \end{DoxyCompactList}\item 
+int \hyperlink{classsentence_a6b8b9942e1a30a75ca2308d6b71fb24d}{get\+Parent\+Doc\+Num} () const
+\begin{DoxyCompactList}\small\item\em An accessor for the sentence\textquotesingle{}s document number. \end{DoxyCompactList}\item 
+bool \hyperlink{classsentence_ae4cbc4603c414be42f68131e243e1bed}{operator$<$} (const \hyperlink{classsentence}{sentence} \&other)
+\begin{DoxyCompactList}\small\item\em a default $<$ operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsentence_a458e5abe0d27f8972771153e72667673}\label{classsentence_a458e5abe0d27f8972771153e72667673}} 
+\index{sentence@{sentence}!sentence@{sentence}}
+\index{sentence@{sentence}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{sentence()}{sentence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sentence\+::sentence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+The default constructor sets the content to \char`\"{}\char`\"{}, the size to 0, and the pos to 0 \mbox{\Hypertarget{classsentence_a39e99adb96c8de8aeff00c0657248f9e}\label{classsentence_a39e99adb96c8de8aeff00c0657248f9e}} 
+\index{sentence@{sentence}!sentence@{sentence}}
+\index{sentence@{sentence}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{sentence()}{sentence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sentence\+::sentence (\begin{DoxyParamCaption}\item[{string}]{s,  }\item[{int}]{p,  }\item[{int}]{doc\+Num }\end{DoxyParamCaption})}
+
+
+
+Another constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & content of the sentence to be constructed. \\
+\hline
+{\em p} & the position of the sentence in the string. \\
+\hline
+{\em doc\+Num} & the number of the document from which the string originates.\\
+\hline
+\end{DoxyParams}
+The constructor takes a string s, and sets the sentence\textquotesingle{}s content to that string It also takes int p, and sets the sentence\textquotesingle{}s supposed position in a document to that int It then splits the content of the sentence based on white spaces and sets the size of the sentence to the number of tokens that were split 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence_a6b8b9942e1a30a75ca2308d6b71fb24d}\label{classsentence_a6b8b9942e1a30a75ca2308d6b71fb24d}} 
+\index{sentence@{sentence}!get\+Parent\+Doc\+Num@{get\+Parent\+Doc\+Num}}
+\index{get\+Parent\+Doc\+Num@{get\+Parent\+Doc\+Num}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{get\+Parent\+Doc\+Num()}{getParentDocNum()}}
+{\footnotesize\ttfamily int sentence\+::get\+Parent\+Doc\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An accessor for the sentence\textquotesingle{}s document number. 
+
+\begin{DoxyReturn}{Returns}
+An int, the document number.
+\end{DoxyReturn}
+This accessor returns the sentence\textquotesingle{}s parent document number \mbox{\Hypertarget{classsentence_ad4786351fceabfd06ca10b7766d516b3}\label{classsentence_ad4786351fceabfd06ca10b7766d516b3}} 
+\index{sentence@{sentence}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{get\+Pos()}{getPos()}}
+{\footnotesize\ttfamily int sentence\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+An accessor for the sentence\textquotesingle{}s position in a document. 
+
+\begin{DoxyReturn}{Returns}
+An int, the starting position of the sentence.
+\end{DoxyReturn}
+This accessor returns the sentence\textquotesingle{}s position in the document \mbox{\Hypertarget{classsentence_ae4cbc4603c414be42f68131e243e1bed}\label{classsentence_ae4cbc4603c414be42f68131e243e1bed}} 
+\index{sentence@{sentence}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sentence@{sentence}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool sentence\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classsentence}{sentence} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+a default $<$ operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & a sentence to compare {\itshape this} to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean. Whether other is greater than {\itshape this}
+\end{DoxyReturn}
+First, orders sentences by document number T\+Hen, orders them by their position in the document 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sentence.\+h\item 
+sentence.\+cpp\end{DoxyCompactItemize}

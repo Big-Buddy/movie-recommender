@@ -1,0 +1,102 @@
+\hypertarget{classsentence__tokenizer}{}\section{sentence\+\_\+tokenizer Class Reference}
+\label{classsentence__tokenizer}\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+Inheritance diagram for sentence\+\_\+tokenizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsentence__tokenizer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsentence__tokenizer_aa36679bc4afb2788d5c81fcee4ab9e0b}{sentence\+\_\+tokenizer} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsentence__tokenizer_ac15a8df6ebb233288866e8d692e514c8}\label{classsentence__tokenizer_ac15a8df6ebb233288866e8d692e514c8}} 
+\hyperlink{classsentence__tokenizer_ac15a8df6ebb233288866e8d692e514c8}{$\sim$sentence\+\_\+tokenizer} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classsentence}{sentence} $>$ \hyperlink{classsentence__tokenizer_ab394b821c6d32d41ae07ae84a0d1b5a6}{sentence\+\_\+tokenize} (const string \&s, int doc\+Num)
+\begin{DoxyCompactList}\small\item\em A method to break down a string into a set of strings. \end{DoxyCompactList}\item 
+bool \hyperlink{classsentence__tokenizer_accdc817790cdb696912ec8076701f8a9}{is\+\_\+end} (const char \&c)
+\begin{DoxyCompactList}\small\item\em A method to check if a char is either \char`\"{}?\char`\"{} OR \char`\"{}.\char`\"{} OR \char`\"{}!\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{classsentence__tokenizer_a2f86e3437eb3a948b5ee309ce04d0029}{is\+Abbreviation} (const string \&first, const string \&second)
+\begin{DoxyCompactList}\small\item\em A method to check if a string is an abbreviation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsentence__tokenizer_aa36679bc4afb2788d5c81fcee4ab9e0b}\label{classsentence__tokenizer_aa36679bc4afb2788d5c81fcee4ab9e0b}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{sentence\+\_\+tokenizer()}{sentence\_tokenizer()}}
+{\footnotesize\ttfamily sentence\+\_\+tokenizer\+::sentence\+\_\+tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+The default constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsentence__tokenizer_accdc817790cdb696912ec8076701f8a9}\label{classsentence__tokenizer_accdc817790cdb696912ec8076701f8a9}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!is\+\_\+end@{is\+\_\+end}}
+\index{is\+\_\+end@{is\+\_\+end}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{is\+\_\+end()}{is\_end()}}
+{\footnotesize\ttfamily bool sentence\+\_\+tokenizer\+::is\+\_\+end (\begin{DoxyParamCaption}\item[{const char \&}]{c }\end{DoxyParamCaption})}
+
+
+
+A method to check if a char is either \char`\"{}?\char`\"{} OR \char`\"{}.\char`\"{} OR \char`\"{}!\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & the char to be tested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bool\+: the truth value that is determined by testing the char c.
+\end{DoxyReturn}
+Tests a char input to see whether it matches certain characters. \mbox{\Hypertarget{classsentence__tokenizer_a2f86e3437eb3a948b5ee309ce04d0029}\label{classsentence__tokenizer_a2f86e3437eb3a948b5ee309ce04d0029}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!is\+Abbreviation@{is\+Abbreviation}}
+\index{is\+Abbreviation@{is\+Abbreviation}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{is\+Abbreviation()}{isAbbreviation()}}
+{\footnotesize\ttfamily bool sentence\+\_\+tokenizer\+::is\+Abbreviation (\begin{DoxyParamCaption}\item[{const string \&}]{first,  }\item[{const string \&}]{second }\end{DoxyParamCaption})}
+
+
+
+A method to check if a string is an abbreviation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & the string to be tested. \\
+\hline
+{\em second} & This is the string which appears after first, it is used in the detection of abbreviations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bool\+: the truth value that is determined by testing the string first.
+\end{DoxyReturn}
+Tests a string (first) to determine if it is an abbreviation of a word or not. Three checks are performed\+: If the string does not end in \char`\"{}.\char`\"{} it is not an abbreviation If the string following the first string (second) is in lower case then first must be an abbreviation. If first and second are in uppercase and the length of first is less than or equal to 4 we assume it is an abbreviation of a title. \mbox{\Hypertarget{classsentence__tokenizer_ab394b821c6d32d41ae07ae84a0d1b5a6}\label{classsentence__tokenizer_ab394b821c6d32d41ae07ae84a0d1b5a6}} 
+\index{sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}!sentence\+\_\+tokenize@{sentence\+\_\+tokenize}}
+\index{sentence\+\_\+tokenize@{sentence\+\_\+tokenize}!sentence\+\_\+tokenizer@{sentence\+\_\+tokenizer}}
+\subsubsection{\texorpdfstring{sentence\+\_\+tokenize()}{sentence\_tokenize()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classsentence}{sentence} $>$ sentence\+\_\+tokenizer\+::sentence\+\_\+tokenize (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int}]{doc\+Num }\end{DoxyParamCaption})}
+
+
+
+A method to break down a string into a set of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to be broken down. \\
+\hline
+{\em doc\+Num} & the doc number of the string s (parent\+Doc\+Num of sentence) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector$<$string$>$\+: the set of strings that make up s, split into sentences based on punctuation and grammar.
+\end{DoxyReturn}
+The sentence\+\_\+tokenize method takes a string s, and first breaks it into tokens by splitting words by whitespace. It then takes every string in the vector, and begins adding them together to form a sentence. If the end of a sentence is detected. We store what is currently on the accumulator and reset the accumulator We continue iterating until we have exhausted all the tokens. Finally, it returns the new vector of sentences. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sentence\+\_\+tokenizer.\+h\item 
+sentence\+\_\+tokenizer.\+cpp\end{DoxyCompactItemize}
