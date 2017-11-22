@@ -1,6 +1,4 @@
 #include "movie_tokenizer.h"
-
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <map>
@@ -21,6 +19,8 @@ vector<movie> movie_tokenizer::movie_tokenize(string META_DATA_FILE, string DESC
     //tokenize the meta data
     const char* meta_data_Src = META_DATA_FILE.c_str();
     ifstream metadata_fs(meta_data_Src);
+    if(!metadata_fs)
+        throw std::runtime_error("Could not Load Metadata File");
     map <int, pair<string, string>> id_to_metadata;
 
     string m_line;
