@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "movie_indexer.h"
 
 /*!
@@ -15,7 +16,11 @@ vector<movie*> movie_indexer::operator [](string name){
     try {
         for(vector<index_item*>::iterator itemsIt = getItems().begin(); itemsIt != getItems().end(); ++itemsIt){
             movie *mov = dynamic_cast<movie*>(*itemsIt);
-            if(mov->get_name().find(name) != string::npos){
+            string movName = mov->get_name();
+            transform(movName.begin(), movName.end(), movName.begin(), ::tolower);
+            transform(name.begin(), name.end(), name.begin(), ::tolower);
+
+            if(movName.find(name) != string::npos){
                 movVec.push_back(mov);
             }
         }
@@ -23,7 +28,6 @@ vector<movie*> movie_indexer::operator [](string name){
         cout<< ex.what() << endl;
         exit(1);
     }
-
 
     return movVec;
 }

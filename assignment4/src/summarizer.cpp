@@ -93,7 +93,7 @@
 //            &*sentIt >> sentIdx;
 //        }
 //    }
-//    sendIdx.normalize();
+//    sentIdx.normalize();
 //
 //    //get a number of words that the user wants to have in his new essay.
 //    bool isNumberInput = false;

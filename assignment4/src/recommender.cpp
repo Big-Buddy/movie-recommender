@@ -29,27 +29,24 @@ int main() {
     movie_indexer movIdx;
     vector<movie> movVec;
     movie_tokenizer mt;
-    string metadata = "movie.metadata.tsv";
+    string metadata = "movie.metadata2.tsv";
     string descriptions = "plot_summaries.txt";
 
     cout << "-----------------------------------------" << endl << endl;
     cout << "Loading the list of movies. This may take a while..." << endl;
-    
-    movVec = mt.movie_tokenize(metadata, descriptions);
 
-    int start_index = clock();
     try{
         movVec = mt.movie_tokenize(metadata, descriptions);
     }catch (runtime_error& ex){
         cout<<ex.what()<<endl;
         return 1;
     }
+    int start_index = clock();
     for(vector<movie>::iterator movIt = movVec.begin(); movIt != movVec.end(); ++movIt){
         &*movIt >> movIdx;
     }
     int stop_index = clock();
     cout << "Time for indexing: " << (stop_index - start_index)/double(CLOCKS_PER_SEC)*1000 << endl;
-    movIdx.normalize();
     cout << "Finished loading!" << endl << endl;
     cout << "-----------------------------------------" << endl << endl;
     bool movieFound = false;
@@ -69,6 +66,7 @@ bool findMovie( movie_indexer& movIdx){
         do {
             string favMovieName;
             cout << "What is your favourite movie?" << endl;
+            cin.ignore();
             getline(cin, favMovieName);
             vector<movie *> favMovies = movIdx[favMovieName];
             movie *favMovie;
