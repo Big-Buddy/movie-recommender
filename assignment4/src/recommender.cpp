@@ -45,6 +45,7 @@ int main() {
     for(vector<movie>::iterator movIt = movVec.begin(); movIt != movVec.end(); ++movIt){
         &*movIt >> movIdx;
     }
+    movIdx.normalize();
     int stop_index = clock();
     cout << "Time for indexing: " << (stop_index - start_index)/double(CLOCKS_PER_SEC)*1000 << endl;
     cout << "Finished loading!" << endl << endl;
